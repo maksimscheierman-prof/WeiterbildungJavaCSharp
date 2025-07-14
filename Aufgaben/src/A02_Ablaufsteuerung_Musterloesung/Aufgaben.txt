@@ -1,0 +1,29 @@
+
+
+    - Aufgaben zu Variablen & Ablaufsteuerung -
+
+
+    - Lege für jede Aufgabe eine neue Klasse an mit eigener Main-Methode -
+
+    |-------------------------------------------------------------------------------------------|
+    |       Designe die Konsolenanwendung so, dass sie Möglichst Nutzerfreundlich ist und       |
+    |       soweit es eine Konsolenanwendung zulässt, ein nachvollziehbares Interface hat.      |
+    |-------------------------------------------------------------------------------------------|
+
+    Was man hierfür benötigt:
+        Variablen, Ablaufsteuerung( if-else ), Operatoren (+,-,*,/,...), Scanner
+
+    1. Temperaturumwandler:
+        - Nutzer soll eingeben können Grad Celcius oder Kelvin
+        -> Programm soll umwandeln in die entsprechend andere Einheit
+
+    2. Notenklassifikation:
+        - Werkzeug für Benotung
+        -> Es soll eine Punktzahl eingegeben werden, basierend auf der Punktzahl soll eine Note
+            berechnet werden. Wähle einen eigenen Notenschlüssel
+
+    3. Taschenrechner
+        - Beliebig komplex :)
+
+
+
