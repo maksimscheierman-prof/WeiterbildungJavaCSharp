@@ -1,0 +1,5 @@
+
+    | ---- Aufgaben ---- |
+
+
+    1. Erstelle in diesem Ordner eine .txt-Datei und pushe sie.
