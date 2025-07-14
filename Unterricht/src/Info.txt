@@ -5,3 +5,15 @@
     |                                                               |
     |---------------------------------------------------------------|
     |                                                               |
+
+
+        How to GIT:
+
+        1. Das erste was wir machen, wenn wir unser REPO öffnen. (Also dieses Projekt)
+                    -> FETCH ALL (gestrichelter Pfeil)
+        2. Wenn auf meinem Branch blaue Pfeile sind -> Update
+        3. Wenn auf der Main änderungen sind ggfs. Merch Main into "Name" (mein eigenen Branch)
+        4. Wenn ich etwas abzugeben (hochzuladen) habe. Änderungen pushen
+                -> (alt + 0) Alle changes anhaken, Commit-Message eingeben (kurz und Informativ, was hab ich geändert)
+                    und dann "Commit and Push ..."
+
