@@ -1,0 +1,19 @@
+
+
+    |------------------------------------------------------------------------------------------------------------------|
+    |                   Aufgabe: 15.07.2025
+    |   Thema: Notenklassifikation
+    |   Aufgabe:
+    |       Die Notenklassifikationsapp soll nun um einen Notenspiegel erweitert werden.
+    |       Die eingetragenen Puntzahlen sollen automatisch in eine Note umgerechnet werden.
+    |       Die Note soll gespeichert werden.
+    |           Option1: Die Lehrer können selbst festlegen wie viele Noten eingegeben werden (Anspruchsvoll)
+    |           Option2: Es sollen exakt 10 Noten eingetragen werden (einfacher)
+    |       Der Notendurchschnitt soll berechnet und ausgegeben werden.
+    |     * Optional: Die Noten sollen in einem Notenspiegel auf der Konsole ausgegeben werden. (Anspruchsvoll)
+    |
+    |------------------------------------------------------------------------------------------------------------------|
+
+    *BITTE NUR IN DIESEM PACKAGE ARBEITEN UND ABGEBEN!*
+
+
