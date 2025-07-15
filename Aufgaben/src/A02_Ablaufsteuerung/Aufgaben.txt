@@ -25,5 +25,11 @@
     3. Taschenrechner
         - Beliebig komplex :)
 
-
-
+    4. Kostenrechner mit Staffelpreis
+        - Musikanbieter verkauft Songs auf einer online-Plattform
+        -> Die ersten 5 Songs sind Gratis
+        -> für die folgenden 30 Songs kostet es 20cent pro Stück
+        -> für jeden weiteren Song 15 cent
+        => Was kostet der Einkauf insgesamt?
+        * User-Interface (Soweit es die Konsole zulässt)
+    5. BMI-Rechner
