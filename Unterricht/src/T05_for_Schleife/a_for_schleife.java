@@ -1,6 +1,6 @@
 package T05_for_Schleife;
 
-public class a_info {
+public class a_for_schleife {
     public static void main(String[] args) {
 
         /***********************************************************************************************************************************
