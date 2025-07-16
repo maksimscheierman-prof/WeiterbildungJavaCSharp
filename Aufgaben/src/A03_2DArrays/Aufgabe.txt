@@ -1,0 +1,14 @@
+
+
+    ############ Übungsaufgaben    2D-Arrays          ############################################################
+
+    1. Essensplan
+        -> Erstelle für eine Woche (Montag bis Freitag) einen Essensplan
+        Es soll für jeden Tag ein Mittagessen eingetragen werden.
+        => Menüoptionen sollen enthalten:
+            -> Essen für einen bestimmten Tag anzeigen
+            -> Die ganze Woche anzeigen
+            -> Die Woche neu Planen
+    ==> Optional: Es sollen 3 Mahlzeiten eingetragen werden können.
+
+
