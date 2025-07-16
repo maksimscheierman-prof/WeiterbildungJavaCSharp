@@ -1,6 +1,6 @@
 package T04_Array;
 
-public class a_info {
+public class a_1D_Arrays {
     public static void main(String[] args) {
 
         /***********************************************************************************************************************************
