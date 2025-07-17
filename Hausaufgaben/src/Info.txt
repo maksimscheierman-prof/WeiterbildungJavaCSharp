@@ -1,2 +1,7 @@
 
     Hier kommen die Hausaufgaben
+
+    Bitte in den VORGESEHENEN PACKAGES arbeiten!
+    ihr könnt INNERHALB der Packages, wenn ihr braucht, neue Packages aufmachen.
+    Aber bitte nicht außerhalb!
+
