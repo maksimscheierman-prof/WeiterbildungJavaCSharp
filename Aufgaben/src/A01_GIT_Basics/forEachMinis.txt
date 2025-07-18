@@ -1,0 +1,46 @@
+
+
+    kurze knackige Aufgaben um for und for-each
+    häufig und schnell zu wiederholen.
+
+    Hinweis:
+        Übungsaufgaben sind zum Üben.
+        Bei der Softwareentwicklung führen viele Wege zum Ergebnis.
+        Wo for-schleifen gehen, gehen auch oft foreach-Schleifen.
+        Übe, was du Üben möchtest, probier dich aus, stell Fragen.
+
+   _____________ for / foreach ___________________________________
+    1. Speichere Wochentage in einem String array
+        -> Gebe sie auf der Konsole aus
+            a) ohne for-schleife
+            b) mit for-schleife
+            c) mit foreach Schleife
+
+    2.  Erstelle eine Sitzplatzreservierung für
+        ein Restaurant. Es gibt Platz für
+        maximal 20 Personen.
+        Die Personen sollen über eine Konsolen-Eingabemaske
+        gespeichert werden können.
+        Mithilfe einer schnellen Suchfunktion sollen
+        die Rezeptionisten suchen können, ob
+        die Person auf der Liste steht.
+
+    _______ Verschachtelte for ___________________________________________
+
+    3. Erstelle ein 2 dimensionales Array für 5 Schüler,
+        Weise jedem Schüler 6 Noten zu.
+        Pro Schüler nutzen wir eine Arrayzeile.
+        Gib die Noten in folgendem Format auf der Konsole aus:
+        Schüler 1:  2 3 1 2 4 1
+        Schüler 2:  4 4 4 2 2 1
+        ... etc.
+        a) Gib die Noten für Schüler 1 & 2 testweise einmal manuell aus (ohne for-Schleife)
+        b) Das ist ermüdent... nimm lieber eine verschachtelte for-Schleife.
+
+    4. Stelle ein Sudoku Feld auf der Konsole dar.
+       Nimm dazu gerne eine Vorlage aus dem Internet.
+       a) Zeige das Feld auf der Konsole an.
+       b) Nimm Nutzereingaben an und füge sie ein.
+       Hint: Lasse vorgegeben Zahlen in einer anderen
+            Farbe erscheinen.
+
