@@ -1,0 +1,16 @@
+
+        Klassennamen wie folgt:
+
+            TicTacToe
+            VierGewinnt
+            Hangman
+
+        Datei wie oben benennen und pushen.
+
+        Bei Anmerkungen zu eurem Programm, ganz oben ein Readme:
+        Sonst weglassen.
+        /*
+            README:
+
+
+        */
