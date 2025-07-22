@@ -41,6 +41,8 @@
        Nimm dazu gerne eine Vorlage aus dem Internet.
        a) Zeige das Feld auf der Konsole an.
        b) Nimm Nutzereingaben an und füge sie ein.
-       Hint: Lasse vorgegeben Zahlen in einer anderen
+       c) Prüfe, ob die Felder korrekt ausgefüllt sind.
+       Optional: Lasse vorgegeben Zahlen in einer anderen
             Farbe erscheinen.
+       Optional: Verhindere, dass die vorgegebenen Zahlen überschrieben werden können.
 
