@@ -1,0 +1,22 @@
+    ############ Übungsaufgaben           ArrayLists      ############################################################
+
+        _____________________________________________
+                1. VIP Liste
+                - Erstelle eine Liste in die Personen eingetragen werden können.
+                - Die Liste soll dynamisch wachsen können.
+                - Baue eine Suchfunktion ein, steht die Person auf der Liste?
+                - Baue eine Ausgabefunktion ein.
+
+        ____________________________________________
+                2. Einkaufsliste
+                - Erstelle eine Interaktive Einkaufsliste
+                Folgende Features werden benötigt:
+                -> Menü:
+                - -> Hinzufügen
+                - -> Ändern
+                - -> Löschen
+                - -> Anzeigen
+                __ Extra Features __
+                -> Menge
+                -> Kosten
+                -> Kategorien
