@@ -1,0 +1,40 @@
+
+
+    UML Diagramme   Programmablaufplan
+
+
+    Aufgabe 1. Stelle einen Tagesablauf aus deinen Ferien dar. (Bitte mehr als nur schlafen essen schlafen)
+
+    Aufgabe 2:
+        Setze die Ampelschaltung gemäß
+        PAP um.
+
+    Aufgabe 3: Getränkeautomat:
+                        Es soll die Software für einen Getränkeautomat erstellt werden.
+                        Lege mindestens 3 verschiedene Getränke an.
+                        Es soll Kartenzahlung und Bargeldeinzahlung geben.
+                        Bei Bargeldzahlung soll der Restbetrag wieder dem Kunden zurückgegeben werden.
+                        ( Du musst keine echte Kartenzahlungslogik implementieren!)
+                   - Lege erst das UML Diagramm an.
+                   - Baue programmiere dann den Getränkeautomaten.
+
+/****************************************************************************************/
+
+/****************************************************************************************/
+    How To: Programm zeitlich einfrieren
+
+    try {
+        Thread.sleep(10000); // Pause für 10.000 ms
+    }
+    catch (InterruptedException e) {
+    System.out.println("Pause wurde unterbrochen!");
+    }
+
+    // Alles was im try block{} passiert wird auf Fehler geprüft
+    // Wenn ein Fehler auftritt wird automatisch der catch-Block ausgeführt.
+    // Manche Methoden verlangen! nach einem try-catch Block.
+        // Thread.sleep() ist so eine Methode.
+
+/****************************************************************************************/
+
+/****************************************************************************************/

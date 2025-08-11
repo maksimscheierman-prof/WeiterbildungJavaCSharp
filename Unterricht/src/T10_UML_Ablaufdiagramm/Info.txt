@@ -1,0 +1,21 @@
+
+
+    Aufgaben zu Ablaufdiagrammen
+
+    Geeignete Tools für UML Diagramme sind z.B. draw.io oder miro.com
+    wir arbeiten erstmal mit miro
+
+  Aufträge:
+         1. Stelle einen Tagesablauf aus deinen Ferien dar. (Bitte mehr als nur schlafen essen schlafen)
+
+         2. Getränkeautomat:
+                Es soll die Software für einen Getränkeautomat erstellt werden.
+                Lege mindestens 3 verschiedene Getränke an.
+                Es soll Kartenzahlung und Bargeldeinzahlung geben.
+                Bei Bargeldzahlung soll der Restbetrag wieder dem Kunden zurückgegeben werden.
+                ( Du musst keine echte Kartenzahlungslogik implementieren!)
+           - Lege erst das UML Diagramm an.
+           - Baue programmiere dann den Getränkeautomaten.
+
+
+
