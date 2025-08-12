@@ -1,0 +1,9 @@
+      Hausaufgabe
+        PasswortChecker:
+        Erstelle zwei Klassen:
+        - Main Klasse
+        - PasswortChecker Klasse
+        Prüfe ob eine eingegebene Zeichenkette:
+        Großbuchstaben hat, Zahlen hat, Sonderzeichen hat und ausreichend Lang ist.
+        Teste deine PasswortChecker Klasse in der Main Methode.
+        Bonus: Lasse einen Passwortvorschlag generieren.
