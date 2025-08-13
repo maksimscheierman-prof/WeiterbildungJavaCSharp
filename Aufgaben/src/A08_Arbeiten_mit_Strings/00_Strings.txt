@@ -1,0 +1,41 @@
+
+    Training: Umgang mit Strings unter Einsatz bisher gelernter Inhalte
+                (Berücksichtige alles was du bisher gelernt hast.)
+
+Übungen zu Strings____________________________________________________________________________________________
+    1. Erstelle ein Programm Namens MultiTool
+     Das Programm soll ein Hauptmenü enthalten, aus dem eines der folgenden Tools ausgewählt werden kann:
+
+    a) String-Taschenrechner
+        - Lasse den Nutzer eine komplette mathematische Aufgabe eingeben
+        z.B. "3 + 2 * 4"
+        - Gebe das Ergebnis aus.
+    b). E-Mail Validator
+        Prüfe ob eine Emailadresse korrekt eingegeben wurde.
+        Sie darf nur ein @ Zeichen enthalten und muss auf .com/.de/.fr/... enden
+    c) Blacklist filter
+        Prüfe ob ein Satz ein bestimmtes verbotenes Wort enthält.
+        Falls ja ersetze das Wort durch Sternchen und gebe den Satz erneut aus.
+    d) Caesar Schiffrierung
+        Wandle einen Text so, dass jeder Buchstabe um eine frei wählbare Anzahl stellen
+        im Alphabet verschoben wird.
+    e) Morsecode
+        Wandle einen Text in Morsecode um.
+
+
+Projektaufgabe___________________________________________________________________________________________________
+    2. Erstelle eine Eingabemaske für ein Anmeldesystem.
+        - Nutzer sollen sich registrieren können mit:
+            - Email, Name, Vorname, Passwort
+        - Bereits vorhandene Emails sollen nicht erneut genutzt werden dürfen.
+        - Registrierte Nutzer sollen sich mit ihrer email und dem Passwort einloggen können.
+        -> Eingeloggte User sollen ihr Passwort ändern können.
+        ! Erstelle vorab einen Programmablaufplan!
+        Hinweis:
+            - Mit den aktuellen Unterrichtsinhalten wirst du vermutlich
+              zwei ArrayLists nutzen müssen und eine Variable (z.B. UserID)
+              nutzen müssen um beide ArrayLists parallel zu veralten.
+            - Arbeite mit einer guten "Kohäsion und Kopplung"
+              Kohäsion: Du möchtest Methoden mit klaren Aufgaben.
+              Kopplung: Du möchtest möglichst viel Unabhängigkeit zwischen den Methoden.
+              Hohe Kohäsion, niedrige Kopplung. = saubare, wartbare Software
