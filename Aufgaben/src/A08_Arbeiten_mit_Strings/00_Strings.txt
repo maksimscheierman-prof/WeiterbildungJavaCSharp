@@ -7,8 +7,9 @@
      Das Programm soll ein Hauptmenü enthalten, aus dem eines der folgenden Tools ausgewählt werden kann:
 
     a) String-Taschenrechner
-        - Lasse den Nutzer eine komplette mathematische Aufgabe eingeben
-        z.B. "3 + 2 * 4"
+        - Lasse den Nutzer eine komplette mathematische Aufgabe eingeben.
+        - Immer nur 2 Zahlen verrechnen
+        z.B. "3 + 2", "4*5 ", "8 / 3"
         - Gebe das Ergebnis aus.
     b). E-Mail Validator
         Prüfe ob eine Emailadresse korrekt eingegeben wurde.
