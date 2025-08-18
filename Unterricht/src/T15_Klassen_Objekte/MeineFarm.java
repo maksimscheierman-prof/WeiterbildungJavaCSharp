@@ -5,14 +5,6 @@ import java.util.Scanner;
 
 public class MeineFarm {
 
-            /*
-        Du bist hier:
-        [ ] a_Info
-        [ ] Haustier
-        [x] MeineFarm
-        [ ] Main
-     */
-
     // Wir legen eine Liste an in die unsere Haustiere kommen.
     ArrayList<Haustier> alleHaustiere = new ArrayList<>();
     Scanner scan = new Scanner(System.in);
