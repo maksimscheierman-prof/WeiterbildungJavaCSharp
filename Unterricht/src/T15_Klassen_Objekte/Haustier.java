@@ -58,7 +58,7 @@ public class Haustier {
     }
 
 
-    public void gibLaut(){
+    public static void gibLaut(String Art){
         if(Art.equals("Dog")){
             System.out.println("BELL");
         }
@@ -69,6 +69,7 @@ public class Haustier {
             System.out.println("Tiergeräusch");
         }
     }
+
 
 
 }
