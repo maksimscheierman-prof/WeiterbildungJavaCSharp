@@ -27,10 +27,6 @@ public class z_Aufgaben {
                     was brauchst du für Klassen, wie müssen diese Aufgebaut sein?
                 -> Falls dein Produkt am Ende von deinen Vorstellungen Abweicht, ist das völlig normal!
                     Es soll deinem Vorgehen nur einen Startpunkt und struktur geben.
-          NICHT TEILEN:
-                KONZEPT: Schritt 1: In einem .txt das UserInterface darstellen.
-                         Schritt 2: Das Ablaufdiagramm schreiben
-                         Schritt 3: Programmieren
      */
 
 }

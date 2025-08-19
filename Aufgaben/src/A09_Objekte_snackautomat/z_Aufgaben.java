@@ -1,4 +1,4 @@
-package A09_Objekte;
+package A09_Objekte_snackautomat;
 
 public class z_Aufgaben {
 
