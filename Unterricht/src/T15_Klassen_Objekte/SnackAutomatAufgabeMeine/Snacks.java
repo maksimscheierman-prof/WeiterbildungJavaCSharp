@@ -5,7 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Snacks {
-    //Variablen
+
+    //Variables
     private String name;
     private int amount;
     private Map<String, Double> nutrients = new HashMap<>();
@@ -20,6 +21,7 @@ public class Snacks {
         nutrients.put("Carbohydrate", carbs);
     }
 
+    //Methods
     public static void createInitialSnacks(ArrayList<Snacks> snacks){
         snacks.add(new Snacks("Chips",8,35.0,50.0,6.0));
         snacks.add(new Snacks("Chocolate",5,30.0,55.0,5.0));

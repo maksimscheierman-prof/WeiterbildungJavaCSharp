@@ -4,9 +4,8 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
+        Snackautomat snacky = new Snackautomat();
+        snacky.runSnackAutomat();
 
-        ArrayList<Snacks> allSnacks = new ArrayList<>();
-        Snacks.createInitialSnacks(allSnacks);
-        Snacks.showSnacks(allSnacks);
     }
 }
