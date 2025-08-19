@@ -11,7 +11,7 @@ public class Snacks {
     private int amount;
     private Map<String, Double> nutrients = new HashMap<>();
 
-    //Contructor
+    //Constructor
     public Snacks(String name, int amount, double fat, double carbs, double protein){
         this.name = name;
         this.amount = amount;
