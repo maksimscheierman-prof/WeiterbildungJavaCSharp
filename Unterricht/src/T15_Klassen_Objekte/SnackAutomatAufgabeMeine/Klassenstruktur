@@ -1,0 +1,6 @@
+Eine Klasse Snack für
+Attribute wie Amount, Nährwerte etc.
+Methoden wie SnackErstellungInitial, ZeigeSnacks
+
+Eine Klasse für Snackautomat für:
+Menüverwaltung
