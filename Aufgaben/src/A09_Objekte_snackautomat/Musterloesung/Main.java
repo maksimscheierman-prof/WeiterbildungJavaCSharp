@@ -1,4 +1,4 @@
-package A09_Objekte.Musterloesung;
+package A09_Objekte_snackautomat.Musterloesung;
 
 public class Main {
                 /*
