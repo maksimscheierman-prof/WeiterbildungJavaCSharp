@@ -24,7 +24,7 @@ public class Snackautomat {
                     kaufMenu();
                     break;
                 case "auffuellen":
-                    auffuelMenu();
+                    menu = auffuelMenu();
                     break;
                 case "snackinfo":
                     snackinfoMenu();
@@ -63,7 +63,6 @@ public class Snackautomat {
                     System.out.println("Bitte werfen Sie das Geld ein!");
                     userDoubleInput = scan.nextDouble();
                     geldTransfer(userDoubleInput, snack.getPrice());
-                    mainMenu();
                     found = true;
                     break;
                 }
@@ -75,9 +74,9 @@ public class Snackautomat {
         }
     }
 
-    public void auffuelMenu() {
+    public String auffuelMenu() {
         if (!passwordCheck()) {
-            mainMenu();
+            return "main";
         }
 
         System.out.println("******************************************\n");
@@ -94,27 +93,41 @@ public class Snackautomat {
                     System.out.println("Auffüllende Mengenanzahl eingeben: ");
                     userIntInput = scan.nextInt();
                     snackAuffuelung(userIntInput, snack);
-                    mainMenu();
+
                     selected = true;
                     break;
                 }
             }
         }
-        if(!selected){
+        if (!selected) {
             System.out.println("Falschen Snack eingegeben! ");
-            mainMenu();
         }
+        return "main";
     }
 
     public void snackinfoMenu() {
 
     }
 
-    public void snackAuffuelung(int aufzuladaneMenge, Snacks snack){
-        if(aufzuladaneMenge + snack.getAmount()<=10){
-            updateSnackAmount(snack, aufzuladaneMenge);
+    public void snackAuffuelung(int aufzuladaneMenge, Snacks snack) {
+        boolean snackAufgefuellt = false;
+        while (!snackAufgefuellt) {
+
+            if (aufzuladaneMenge == 0 || aufzuladaneMenge + snack.getAmount() > 10) {
+                System.out.println("******************************************\n");
+                System.out.println("Die Menge ist ungültig!\n");
+                System.out.println("Bitte eine Menge größer als 0 eingeben und die maximale Menge von 10 nicht überschreiten!");
+                aufzuladaneMenge = scan.nextInt();
+
+            } else if (aufzuladaneMenge + snack.getAmount() <= 10) {
+                updateSnackAmount(snack, aufzuladaneMenge);
+                System.out.println("******************************************\n");
+                System.out.println("Der Snack " + snack.getName() + " wurde um " + aufzuladaneMenge + " erfolgreich aufgefüllt!");
+                snackAufgefuellt = true;
+            }
         }
     }
+
 
     public boolean passwordCheck() {
         System.out.println("******************************************\n");
