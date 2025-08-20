@@ -23,9 +23,7 @@ public class Snacks {
         nutrients.put("Carbohydrate", carbs);
     }
 
-    /**
-     * Getter & Setter
-     **/
+    //Getter & Setter
     public String getName() {
         return this.name;
     }
@@ -37,9 +35,12 @@ public class Snacks {
     public int getAmount() {
         return this.amount;
     }
+    public Map<String, Double> getNutrients() {
+        return this.nutrients;
+    }
 
     public void setAmount(int amount) {
-        if (amount >= 0) {
+        if (amount >= 0 && amount <=10) {
             this.amount = amount;
         }
     }
@@ -55,7 +56,7 @@ public class Snacks {
     public static void showSnacks(ArrayList<Snacks> snacks) {
         for (Snacks snack : snacks) {
             //System.out.println("Name " + snack.name + " Menge " + snack.amount + " Nährwerte " + snack.nutrients);
-            System.out.println("Name: " + snack.name + " Menge: " + snack.amount + " Preis in €: " + snack.price);
+            System.out.println("Name: " + snack.getName() + " Menge: " + snack.getAmount() + " Preis in €: " + snack.getPrice());
         }
     }
 

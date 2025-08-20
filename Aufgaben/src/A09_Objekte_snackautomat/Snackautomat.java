@@ -12,25 +12,28 @@ public class Snackautomat {
     String userStrInput;
     Double userDoubleInput;
     Integer userIntInput;
-    String menu;
+    String menu = "main";
 
     public void runSnackAutomat() {
         Snacks.createInitialSnacks(allSnacks);
 
+        //Menüschleife durch Switch case
         while (true) {
-            menu = mainMenu();
             switch (menu) {
                 case "kaufen":
-                    kaufMenu();
+                    menu = kaufMenu();
                     break;
                 case "auffuellen":
                     menu = auffuelMenu();
                     break;
                 case "snackinfo":
-                    snackinfoMenu();
+                    menu = snackinfoMenu();
+                    break;
+                case "main":
+                    menu = mainMenu();
                     break;
                 default:
-                    mainMenu();
+                    menu = mainMenu();
             }
         }
     }
@@ -47,7 +50,7 @@ public class Snackautomat {
         return userStrInput;
     }
 
-    public void kaufMenu() {
+    public String kaufMenu() {
         System.out.println("******************************************\n");
         System.out.println("Folgende Snacks stehen zur Auswahl:");
         Snacks.showSnacks(allSnacks);
@@ -62,7 +65,7 @@ public class Snackautomat {
                     System.out.println("Der Preis beträgt: " + snack.getPrice());
                     System.out.println("Bitte werfen Sie das Geld ein!");
                     userDoubleInput = scan.nextDouble();
-                    geldTransfer(userDoubleInput, snack.getPrice());
+                    handeln(userDoubleInput, snack);
                     found = true;
                     break;
                 }
@@ -70,8 +73,8 @@ public class Snackautomat {
         }
         if (!found) {
             System.out.println("Eingabe inkorrekt!");
-            kaufMenu();
         }
+        return "main";
     }
 
     public String auffuelMenu() {
@@ -105,8 +108,31 @@ public class Snackautomat {
         return "main";
     }
 
-    public void snackinfoMenu() {
+    public String snackinfoMenu() {
+        System.out.println("******************************************\n");
+        System.out.println("Folgende Snacks stehen zur Auswahl für Nährwert Informationen:");
+        Snacks.showSnacks(allSnacks);
+        System.out.println("Tippen Sie bitten den Namen des Snacks ein:");
+        System.out.println("\n******************************************");
 
+
+        userStrInput = scan.nextLine();
+        for (Snacks snack : allSnacks) {
+            if (snack.getName().equals(userStrInput)) {
+                {
+                    System.out.println("Die Nährwerte des Snacks " + snack.getName() + " sind wie folgt " + snack.getNutrients());
+                    System.out.println("Wollen Sie weitere Snackinformationen abrufen, tippen Sie ja. Ansonsten werden Sie zum Hauptmenü weitergeleitet.");
+                    userStrInput = scan.nextLine();
+                    if(userStrInput.equals("ja")){
+                        return "snackinfo";
+                    }else{
+                        return  "main";
+                    }
+
+                }
+            }
+        }
+        return "main";
     }
 
     public void snackAuffuelung(int aufzuladaneMenge, Snacks snack) {
@@ -146,12 +172,14 @@ public class Snackautomat {
     }
 
 
-    public void geldTransfer(double betrag, double preis) {
+    public void handeln(double betrag, Snacks snack) {
+        double preis = snack.getPrice();
         boolean bezahlvorgangAbgeschlossen = false;
         while (!bezahlvorgangAbgeschlossen) {
             if (betrag == preis) {
                 System.out.println("Vielen Dank! Sie haben passend bezahlt.");
                 bezahlvorgangAbgeschlossen = true;
+                updateSnackAmount(snack, -1);
             } else if (betrag < preis) {
                 double fehlend = preis - betrag;
                 System.out.println("Es fehlen noch: " + fehlend + " €");
@@ -159,8 +187,8 @@ public class Snackautomat {
                 double restgeld = betrag - preis;
                 System.out.println("Vielen Dank! Ihr Restgeld beträgt: " + restgeld + " €");
                 bezahlvorgangAbgeschlossen = true;
+                updateSnackAmount(snack, -1);
             }
         }
-        mainMenu();
     }
 }
