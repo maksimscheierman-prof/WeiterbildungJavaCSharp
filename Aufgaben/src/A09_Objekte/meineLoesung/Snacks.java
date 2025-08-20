@@ -1,4 +1,4 @@
-package A09_Objekte_snackautomat.meineLoesung;
+package A09_Objekte.meineLoesung;
 
 import java.util.ArrayList;
 import java.util.HashMap;

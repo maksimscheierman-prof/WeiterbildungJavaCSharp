@@ -1,4 +1,4 @@
-package A09_Objekte_snackautomat.meineLoesung;
+package A09_Objekte.meineLoesung;
 
 public class Main {
     public static void main(String[] args) {
