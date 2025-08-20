@@ -1,6 +1,4 @@
-package A09_Objekte_snackautomat;
-
-import A09_Objekte_snackautomat.Snackautomat;
+package A09_Objekte_snackautomat.meineLoesung;
 
 public class Main {
     public static void main(String[] args) {
