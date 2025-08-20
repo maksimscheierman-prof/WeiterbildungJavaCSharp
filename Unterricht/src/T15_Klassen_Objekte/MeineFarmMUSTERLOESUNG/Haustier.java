@@ -1,4 +1,4 @@
-package A09_Objekte_snackautomat.Musterloesung;
+package T15_Klassen_Objekte.MeineFarmMUSTERLOESUNG;
 
 public class Haustier {
 

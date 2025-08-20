@@ -1,4 +1,4 @@
-package T15_Klassen_Objekte.Musterloesung;
+package T15_Klassen_Objekte.MeineFarmMUSTERLOESUNG;
 
 import java.util.ArrayList;
 import java.util.Scanner;

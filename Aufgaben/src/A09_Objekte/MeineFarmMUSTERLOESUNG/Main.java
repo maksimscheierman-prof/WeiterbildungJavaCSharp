@@ -1,4 +1,4 @@
-package T15_Klassen_Objekte.Musterloesung;
+package A09_Objekte.MeineFarmMUSTERLOESUNG;
 
 public class Main {
                 /*

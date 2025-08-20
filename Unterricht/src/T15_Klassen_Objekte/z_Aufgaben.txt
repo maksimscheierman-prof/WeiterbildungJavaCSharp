@@ -1,0 +1,71 @@
+
+
+
+
+********************************************************************************************************
+                                    Einstieg
+********************************************************************************************************
+    Reverse Engineering:
+        Erweitere die Farm um die Funktion ein Tier auswählen zu können und dann den Laut
+        des Tieres ausgeben zu können.
+
+********************************************************************************************************
+                                    Projekt
+********************************************************************************************************
+    Snackautomat:
+        Schreibe ein Programm für einen Snackautomaten.
+        Der Snackautomat soll auffüllbar sein.
+        Ein Snack, der leer ist, soll nicht verkauft werden können.
+        Es soll wechselgeld geben.
+        Der Snack soll nur aufgefüllt werden, wenn man das richtige Passwort kennt, um den Automaten zu öffnen.
+        Der Automat hat Platz für 10 Einheiten pro Snack.
+        Es sollen zunächst drei verschiedene Snacks angeboten werden.
+        Der Automat soll die Informationen jedes Snacks ausgeben können:
+            - Menge pro Riegel/Tüte
+            - kcal auf 100g
+            - Kohlenhydrate auf 100 g
+            - Fett auf 100 g
+            - Eiweiß auf 100 g
+        * Es wird ein Ablaufdiagramm erwartet!
+        KONZEPT: Schritt 1: In einem .txt das UserInterface darstellen.
+                 Schritt 2: Das Ablaufdiagramm schreiben
+                 Schritt 3: Programmieren
+        -> Falls dein Produkt am Ende von deinen Vorstellungen Abweicht, ist das völlig normal!
+           Es soll deinem Vorgehen nur einen Startpunkt und struktur geben.
+
+********************************************************************************************************
+                                    Übungsaufgaben
+********************************************************************************************************
+
+    1. Warenkorb für einen Online Shop
+        - Es sollen beliebig viele Produkte mit Name, Preis und Anzahl hinzugefügt werden können.
+        (Klassen: Produkt, WarenkorbManager, Main)
+
+    2. Erstelle einen Pizza Konfigurator
+        -> Erstelle eine Klasse "Zutat" (mit Name, Preis)
+        -> Erstelle eine Klasse Pizza mit ArrayList<Zutat>
+        -> Es sollen Zutaten hinzugefügt, entfernt und der Gesamtpreis berechnet werden.
+
+    3. Kampfkraft Rechner.
+       Es soll für ein Aufbauspiel eine Kampfkraftlogik gebaut werden.
+       - Erstelle eine Klasse "Einheit"
+       -> Diese soll einen Namen und eine Kampfkraft haben.
+       -> Erstelle 2 Klassen: TeamA und TeamB
+       - TeamA und TeamB können nun jeweils Einheiten hinzufügen.
+       - Die Gesamte Kampfkraft soll daraufhin zusammenaddiert und angezeigt werden.
+
+    4. Lieferwagen simulation
+        Erstelle für einen Simulator einen Lieferwagen Gewichtsrechner.
+        Dem Lieferwagen sollen Pakete hinzugefügt werden.
+        Wenn das Gesamtgewicht des Lieferwagens überstiegen wird, gib
+        eine Warnung aus.
+        Zusatz (schwer): Lass mehrere Lieferwagen anlegen.
+        (Du brauchst dann wahrscheinlich eine Klasse Lieferwagen, die auf
+         die Klasse Paket zugreift)
+         Paket -(wird benutzt von)-> Lieferwagen -(Wird benutzt von)-> Lieferwagensimulator
+
+    5.  Bibliothek
+        Lege eine Bibliothek an, die diverse Sachen verleiht:
+        a) Bücher
+        b) Filme
+        c) Musik
