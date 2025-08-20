@@ -1,4 +1,4 @@
-package A09_Objekte.meineLoesung;
+package A09_Objekte.SnackAutomatMaksim;
 
 import java.util.ArrayList;
 import java.util.HashMap;

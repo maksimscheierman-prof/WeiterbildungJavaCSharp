@@ -1,9 +1,9 @@
-package A09_Objekte.meineLoesung;
+package A09_Objekte.SnackAutomatMaksim;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static A09_Objekte.meineLoesung.Snacks.updateSnackAmount;
+import static A09_Objekte.SnackAutomatMaksim.Snacks.updateSnackAmount;
 
 public class Snackautomat {
 

@@ -1,4 +1,4 @@
-package A09_Objekte.meineLoesung;
+package A09_Objekte.SnackAutomatMaksim;
 
 public class Main {
     public static void main(String[] args) {
