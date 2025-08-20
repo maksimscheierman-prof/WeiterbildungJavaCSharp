@@ -1,4 +1,4 @@
-package A09_Objekte_snackautomat.SnackAutomatMUSTERLOESUNG;
+package A09_Objekte.SnackAutomatMUSTERLOESUNG;
 
 public class Snack {
     /*

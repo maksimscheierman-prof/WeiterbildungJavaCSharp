@@ -1,4 +1,4 @@
-package T15_Klassen_Objekte.SnackAutomatAufgabe;
+package T15_Klassen_Objekte.SnackAutomatMUSTERLOESUNG;
 
 public class Snack {
     /*

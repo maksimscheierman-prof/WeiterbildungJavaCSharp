@@ -1,4 +1,4 @@
-package T15_Klassen_Objekte.SnackAutomatAufgabe;
+package A09_Objekte.SnackAutomatMUSTERLOESUNG;
 
 public class Main {
     public static void main(String[] args) {

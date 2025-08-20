@@ -1,4 +1,4 @@
-package A09_Objekte_snackautomat.Musterloesung;
+package A09_Objekte.MeineFarmMUSTERLOESUNG;
 
 import java.util.ArrayList;
 import java.util.Scanner;
