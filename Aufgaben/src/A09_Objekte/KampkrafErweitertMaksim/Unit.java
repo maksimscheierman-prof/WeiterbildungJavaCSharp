@@ -1,4 +1,4 @@
-package A09_Objekte.KampkrafMaksim;
+package A09_Objekte.KampkrafErweitertMaksim;
 
 public class Unit {
     //Variables
