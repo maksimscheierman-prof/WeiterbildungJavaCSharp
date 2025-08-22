@@ -1,7 +1,6 @@
 
 
 
-
 ********************************************************************************************************
                                     Einstieg
 ********************************************************************************************************
@@ -40,6 +39,7 @@
     1. Warenkorb für einen Online Shop
         - Es sollen beliebig viele Produkte mit Name, Preis und Anzahl hinzugefügt werden können.
         (Klassen: Produkt, WarenkorbManager, Main)
+        Optional: Kauf 3 Zahl 2.
 
     2. Erstelle einen Pizza Konfigurator
         -> Erstelle eine Klasse "Zutat" (mit Name, Preis)
@@ -69,3 +69,11 @@
         a) Bücher
         b) Filme
         c) Musik
+        -> Ausleih Menü: was ist schon ausgeliehen, wie viel ist noch da?
+        (Optional: ) -> Kundenkonto -> Wer hat welche Sachen ausgeliehen?
+        (Optional: ) -> Zählt Programmzyklen, 5 Zyklen = 1 Tag, berechnet Ausleihdauer [SCHWER! SEHR SCHWER!]
+
+
+    6. Restaurant Karte plus bestellung
+        Klassen: Gericht (Name, Preis)
+        Bestellung: (Liste von Gerichten, Methoden: Gericht hinzufügen, Gesamtsumme berechnen)
