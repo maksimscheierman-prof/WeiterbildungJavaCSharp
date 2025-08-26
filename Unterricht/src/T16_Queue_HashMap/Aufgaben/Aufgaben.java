@@ -25,6 +25,7 @@ public class Aufgaben {
             switch(input) {
                 case "1":
                     System.out.println("Anmeldung, wie ist ihr Name?");
+                    // Methode oder Logik hinzufügen
                     break;
                 case "2":
                     System.out.println("Jetzt am Telefon: " );
@@ -104,6 +105,5 @@ public class Aufgaben {
            - Alle Kunden anzeigen
            - Kunden löschen
 
-        2.
     * */
 }
