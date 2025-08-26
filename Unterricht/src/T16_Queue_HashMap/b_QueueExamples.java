@@ -27,7 +27,6 @@ public class b_QueueExamples {
         myLinkedListQueue.add(9);
         System.out.println(myLinkedListQueue.poll());   // Gibt das erste Element (7) aus.
 
-
         /*** * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
          *              PriorityList Queue
          * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
