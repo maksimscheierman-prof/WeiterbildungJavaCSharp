@@ -1,4 +1,4 @@
-package T17_Klassen_keyword_static;
+package A11_Static;
 
 public class z_Aufgaben {
 
