@@ -1,0 +1,33 @@
+
+
+    Übungsaufgaben die Konstruktor-Chaining behandeln.
+
+    1. Flächenberechnung
+        - Lege eine Klasse Rechteck an mit den Parametern "breite" "hoehe"
+        - Es soll drei Konstruktoren geben:
+        -> Parameterloser Konstruktor (setzt breite und höhe auf 1)
+        -> Konstruktor der nur Breite annimmt (setzte höhe = breite)
+        -> Konstruktor der breite und höhe akzeptiert.
+        -> Konstruktor 1 ruft Konstruktor 3 auf
+        -> Konstruktor 2 ruft Konstruktor 3 auf.
+        - Es soll eine Methode zur Flächenberechnung geben.
+
+    2. Handyfabrik
+        - Erstelle eine Logik um Smartphones anzulegen.
+        - Die Klasse Smartphone hat die Attribute hersteller, modell, speicherGB
+        -> Standardmäßig sollen neue Smartphones mit 1000 gb angelegt werden.
+        -> Es soll aber auch die Möglichkeit geben diesen Standardwert zu überschreiben.
+
+    3. Stiftfabrik
+        - Klasse Stift mit den Attributen: farbe, art, dicke
+    Konstruktoren:
+        Konstruktor 1: nur farbe    | Standard: „Kugelschreiber“, 0.5
+        Konstruktor 2: farbe + art  | Standard: 0.5
+        Konstruktor 3: farbe + art + dicke
+    - Setze sinnvolles Constructor Chaining ein.
+    - Erstelle 100 standard Kugelschreiber in der Farbe blau
+    - Erstelle 50 Wachsmalstifte in der Farbe schwarz
+    - Erstelle 100 grüne Textmarker mit der Dicke 3
+
+
+    4.

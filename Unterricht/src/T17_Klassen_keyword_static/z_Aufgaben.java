@@ -27,7 +27,6 @@ public class z_Aufgaben {
             - Mitglieder löschen
             - ALle Mitglieder anzeigen
             - Einen Bestimmten Mitgliedsnamen suchen.
-
      */
 
 
