@@ -10,12 +10,14 @@
                 und Informationen anzuzeigen.
 
 
+        -> Was teilen sich alle Snacks und Getränke?
+            - kcal, carbs, fat, protein, gramm/Einheit, Preis, Name, Stapel
+        -> Was haben nur Getränke?
+            - blubber, pfand, alcohol
+        -> Was haben nur Snacks?
+            - stkProEinheit
 
-
-
-
-
-
-
-
+        Parent : Artikel
+        Child  : Drink
+        Child  : Snack
 
