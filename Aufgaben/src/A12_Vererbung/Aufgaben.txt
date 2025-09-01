@@ -28,6 +28,12 @@
                  a) auffüllen des Automaten
                  b) Anzeigen des aktuellen Angebots.
 
+         To-Do:
+            - Verkaufslogik
+            - -> Rückgeld Logik
+            - Nutzererfahrung (Inteface)
+            - Admin Zugriff (zum auffüllen)
+
 
 =====================================================================================================
                                         Weitere Übungsaufgaben
