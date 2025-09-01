@@ -21,3 +21,78 @@
         Child  : Drink
         Child  : Snack
 
+
+=====================================================================================================
+                                        Weitere Übungsaufgaben
+=====================================================================================================
+
+# Übungsaufgaben: Vererbung in Java (Hund, Vogel, Fisch)
+
+## Aufgabe 1 – Grundlegende Vererbung
+Erstelle eine Klasse `Tier` mit den Eigenschaften:
+- `name` (String)
+- `alter` (int)
+- `gewicht` (double)
+- `farbe` (String)
+
+und einer Methode `vorstellen()`, die ausgibt:
+`"Ich bin [Name] und [Alter] Jahre alt."`
+
+Leite davon drei Klassen ab:
+- `Hund` mit dem Attribut `anzahlKnochenVergraben` (int) und der Methode `bellen()`, die `"Wuff!"` ausgibt.
+- `Vogel` mit dem Attribut `flugHoehe` (int, in Metern) und der Methode `fliegen()`, die `"Der Vogel fliegt auf [flugHoehe] Metern Höhe."` ausgibt.
+- `Fisch` mit dem Attribut `wasserArt` (String, z. B. `"Süßwasser"` oder `"Salzwasser"`) und der Methode `schwimmen()`, die `"Der Fisch schwimmt im Wasser."` ausgibt.
+
+**Aufgabe:**
+Erzeuge im `main`-Programm je ein Objekt von Hund, Vogel und Fisch, setze die Werte für ihre Attribute und rufe die Methoden auf.
+
+---
+
+## Aufgabe 2 – Konstruktoren nutzen
+Erweitere Aufgabe 1:
+- Füge einen Konstruktor in `Tier` hinzu, der **mindestens** `name` und `alter` setzt.
+  *(Optional für saubere Initialisierung: setze auch `gewicht` und `farbe` im Konstruktor.)*
+- Lass die Unterklassen `Hund`, `Vogel` und `Fisch` den Konstruktor der Oberklasse mit `super()` aufrufen.
+- Die Unterklassen sollen ihre eigenen spezifischen Attribute zusätzlich setzen.
+
+**Aufgabe:**
+Erzeuge mehrere Tiere (Hunde, Vögel und Fische) mit unterschiedlichen Eigenschaften und stelle sie vor.
+
+---
+
+## Aufgabe 3 – Überschreiben von Methoden
+Überschreibe in den Klassen `Hund`, `Vogel` und `Fisch` die Methode `vorstellen()`.
+Beispiele:
+- Hund: `"Ich bin Bello, 3 Jahre alt und habe 5 Knochen vergraben."`
+- Vogel: `"Ich bin Tweety, 1 Jahr alt und fliege gerade auf 20 Metern Höhe."`
+- Fisch: `"Ich bin Nemo, 2 Jahre alt und lebe in Salzwasser."`
+
+---
+
+## Aufgabe 4 – HashMap mit Vererbung
+Erstelle eine `HashMap<String, Tier>`.
+- Der Key soll der Name des Tiers sein.
+- Der Wert soll das jeweilige Tier-Objekt sein (`Hund`, `Vogel` oder `Fisch`).
+
+**Aufgabe:**
+Lege mehrere Tiere an, füge sie in die Map ein und lass dann alle Tiere aus der Map ihre `vorstellen()`-Methode ausführen.
+
+---
+
+## Aufgabe 5 – Polymorphismus
+Schreibe eine Methode `public static void tierMachtGeraeusch(Tier t)`, die je nach Objekt das passende Verhalten zeigt:
+- Hunde bellen,
+- Vögel fliegen,
+- Fische schwimmen.
+
+**Aufgabe:**
+Erzeuge eine Liste mit mehreren `Tier`-Objekten (Hunde, Vögel, Fische).
+Rufe die Methode für jedes Objekt in der Liste auf.
+So siehst du, dass trotz gleicher Variablenklasse (`Tier`) das spezifische Verhalten aufgerufen wird.
+
+---
+
+## Bonus-Aufgabe – Eigene Erweiterung
+Baue eine weitere Klasse deiner Wahl (z. B. `Pferd`, `Schlange` oder `Schildkröte`) und überlege dir ein passendes, tier-spezifisches Attribut und eine Methode.
+Füge diese Klasse ebenfalls in die HashMap und in die Polymorphismus-Methode ein.
+
