@@ -11,3 +11,4 @@
         - Listet die verfügbaren Bücher und wie viele es gibt.
         (Ausleihlogik muss noch nicht implementiert werden,
         nur Darstellung: Was gibt es und wie viel.)
+

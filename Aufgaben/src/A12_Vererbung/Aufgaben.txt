@@ -108,6 +108,3 @@ So siehst du, dass trotz gleicher Variablenklasse (`Tier`) das spezifische Verha
 ## Bonus-Aufgabe – Eigene Erweiterung
 Baue eine weitere Klasse deiner Wahl (z. B. `Pferd`, `Schlange` oder `Schildkröte`) und überlege dir ein passendes, tier-spezifisches Attribut und eine Methode.
 Füge diese Klasse ebenfalls in die HashMap und in die Polymorphismus-Methode ein.
-
-
-
