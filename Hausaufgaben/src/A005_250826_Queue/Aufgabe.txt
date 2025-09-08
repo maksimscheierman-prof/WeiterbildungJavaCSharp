@@ -1,0 +1,10 @@
+    /**
+     *  Programm 1: Rezeption Warteschlangensystem (Queue)
+     *
+     *      Erstelle ein System bei dem sich Kunden anmelden können und in der Reihenfolge
+     *      ihres Eintreffens bedient werden können.
+     *      Die Verwaltungsmitarbeitenden können auf Knopfdruck (Hier per Konsoleneingabe) die nächste
+     *      Person dran nehmen
+     *
+     *      Es soll immer Ausgeben werden welche Person als nächstes dran ist.
+     * */

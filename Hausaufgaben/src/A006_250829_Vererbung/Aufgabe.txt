@@ -1,0 +1,27 @@
+
+
+    1. Snackautomat
+            Unser Snackautomat soll nun auch Getränke verkaufen.
+            - Welche Parameter teilen sich Snacks und Getränke?
+            - Welche Parameter gibt es nur bei Getränken oder Snacks?
+            -> Setze eine sinnvolle Parent-Child logik um.
+            -> Erweitere den Snackautomaten um die Möglichkeit auch Getränke zu verkaufen
+                und Informationen anzuzeigen.
+
+
+        -> Was teilen sich alle Snacks und Getränke?
+            - kcal, carbs, fat, protein, gramm/Einheit, Preis, Name, Stapel
+        -> Was haben nur Getränke?
+            - blubber, pfand, alcohol
+        -> Was haben nur Snacks?
+            - stkProEinheit
+
+        Parent : Artikel
+        Child  : Drink
+        Child  : Snack
+
+    Hausaufgabe:
+        - Lege die drei Klassen mit logischer Vererbung an: Artikel, Drink und Snack.
+        - Lege in einer Managerklasse (z.B. Snackautomat) eine Methode an zum
+            a) auffüllen des Automaten
+            b) Anzeigen des aktuellen Angebots.

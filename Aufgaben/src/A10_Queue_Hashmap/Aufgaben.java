@@ -1,11 +1,13 @@
-package T16_Queue_HashMap.Aufgaben;
+package A10_Queue_Hashmap;
 
 import java.util.Scanner;
 
 public class Aufgaben {
+
     /**
      * *     Du kannst die Beispiel-Teilprogramme nutzen, musst du aber nicht.
      */
+
 
     /**
      *  Programm 1: Rezeption Warteschlangensystem (Queue)
@@ -16,8 +18,8 @@ public class Aufgaben {
      *      Person dran nehmen
      *
      *      Es soll immer Ausgeben werden welche Person als nächstes dran ist.
+     *
      * */
-
     void Programm1() {
         String input = "";
         while(true){
@@ -25,7 +27,6 @@ public class Aufgaben {
             switch(input) {
                 case "1":
                     System.out.println("Anmeldung, wie ist ihr Name?");
-                    // Methode oder Logik hinzufügen
                     break;
                 case "2":
                     System.out.println("Jetzt am Telefon: " );
@@ -94,7 +95,8 @@ public class Aufgaben {
      *
      * */
 
-    /*  Weitere Aufgaben
+    /**
+     *  Weitere Aufgaben
         1. Kundenverwaltung
            Erstelle ein Programm zur Kundendatenverwaltung.
            Speichere Dinge wie: Name, Email, Telefonnummer, Geburtstag
@@ -105,5 +107,6 @@ public class Aufgaben {
            - Alle Kunden anzeigen
            - Kunden löschen
 
+        2. 
     * */
 }
