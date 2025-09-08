@@ -7,7 +7,7 @@ Kampfkraft Rechner.
        - TeamA und TeamB können nun jeweils Einheiten hinzufügen.
        - Die Gesamte Kampfkraft soll daraufhin zusammenaddiert und angezeigt werden.
 
-//modified
+//modified extended vererbung
 Schlacht Simulation
         Einheit
             Attribute
@@ -33,7 +33,12 @@ Schlacht Simulation
                 teamKampf
                     paramater 2 zu kämpfende teams
                     rückgabewert gewonnenes team
-                    alle einheiten jedes teams kämpfen gleichzeitig gegen alle einheiten des gegnerischenteams
-                    das team gewinnt, welches noch lebende einheiten hat,
+                    alle einheiten jedes teams kämpfen gleichzeitig gegen alle einheiten des
+                    gegnerischenteams
+                    das team gewinnt, welches noch lebende einheiten hat
 
+        Es gibt verschiedene Einheitstypen (Artillerie, Infanterie, Kavellarie)
+        Infanterie hat BonusAngriff gegen Artillerie
+        Artillerie hat BonusAngriff gegen Kavellarie
+        Kavellarie hat BonusAngriff gegen Infanterie
 
