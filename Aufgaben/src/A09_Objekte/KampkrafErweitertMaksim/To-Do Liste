@@ -1,4 +1,9 @@
 Erstelle ein Ablaufdiagram Done
 Erstelle eine ToDo-Liste für Klassen Methoden und Argumenten
-
+3 Neue Klassen
+Infanterie, Kavellarie, Artillerie
+Verschiedene Kampfstärke und Bonusschaden
+    Infanterie hat BonusAngriff gegen Artillerie
+    Artillerie hat BonusAngriff gegen Kavellarie
+    Kavellarie hat BonusAngriff gegen Infanterie
 Erstelle ein Kanban mit to-do's

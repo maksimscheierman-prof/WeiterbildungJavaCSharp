@@ -6,6 +6,7 @@ public class Team {
 
     private String name;
     private ArrayList<Unit> units;
+    //Logik für einzelne Kampfwerte zusammen addieren
     private Integer power = 0;
 
     public Integer getPower() {
