@@ -25,4 +25,16 @@ public class Unit {
         return power;
     }
 
+    //Methods
+    public int calculateDamage(Unit opponent) {
+        return this.getRoll(); // Basisschaden
+    }
+
+    @Override
+    public String toString() {
+        // Die Ausgabe des Typs erfolgt jetzt über den Klassennamen
+        return String.format("Einheit: %s (%s) | Stärke: %d, Leben: %d, Kosten: %d",
+                this.name, this.getClass().getSimpleName(), this.power, this.lifepoints, this.cost);
+    }
 }
+

@@ -3,13 +3,13 @@ package A09_Objekte.KampkrafErweitertMaksim;
 public class Infantry extends Unit{
 
     // Konstruktor ohne UnitType
-    public Infantry(String name, Integer power, Integer cost, Integer lifepoints) {
-        super(name, power, cost, lifepoints);
+    public Infantry(String name, Integer cost, Integer lifepoints, Dice power) {
+        super(name, cost, lifepoints, power);
     }
 
     @Override
     public int calculateDamage(Unit opponent) {
-        int finalDamage = super.getPower();
+        int finalDamage = super.getRoll();
         // Infanterie hat BonusAngriff gegen Artillerie
         // Prüfung erfolgt jetzt mit instanceof
         if (opponent instanceof Artillery) {
