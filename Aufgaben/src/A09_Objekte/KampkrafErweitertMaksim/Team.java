@@ -42,7 +42,8 @@ public class Team {
         //this.power += unit.getPower();
 
     }
-    public void addUnits(List<Unit> newUnits){
+
+    public void addUnits(List<Unit> newUnits) {
         units.addAll(newUnits);
     }
 
@@ -54,7 +55,17 @@ public class Team {
 
 
     public void showTeam() {
-        System.out.println("Team: " + getName() + " Power: " + getPower());
-    }
+        System.out.println("********************************************");
+        System.out.println("Team: " + getName() + " | Gesamtkampfkraft: " + getPower());
+        System.out.println("********************************************");
+        if (units.isEmpty()) {
+            System.out.println("Das Team hat keine Einheiten.");
+        } else {
+            for (Unit unit : units) {
+                System.out.println(unit.toString());
+            }
+            System.out.println("*********************************\n");
+        }
 
+    }
 }
