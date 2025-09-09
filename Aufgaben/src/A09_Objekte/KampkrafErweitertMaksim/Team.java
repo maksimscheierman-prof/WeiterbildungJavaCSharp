@@ -1,11 +1,12 @@
 package A09_Objekte.KampkrafErweitertMaksim;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Team {
 
     private String name;
-    private ArrayList<Unit> units;
+    private List<Unit> units;
     //Logik für einzelne Kampfwerte zusammen addieren
     private Integer power = 0;
 
@@ -25,7 +26,7 @@ public class Team {
         this.name = name;
     }
 
-    public ArrayList<Unit> getUnits() {
+    public List<Unit> getUnits() {
         return units;
     }
     //Constructor
@@ -38,13 +39,16 @@ public class Team {
     //Methods
     public void addUnit(Unit unit) {
         units.add(unit);
-        this.power += unit.getPower();
+        //this.power += unit.getPower();
 
+    }
+    public void addUnits(List<Unit> newUnits){
+        units.addAll(newUnits);
     }
 
     public void showUnits() {
         for (Unit unit : units) {
-            System.out.println("Unitname: " + unit.getName() + " Power: " + unit.getPower());
+            System.out.println("Unitname: " + unit.getName() + " Power: " + unit.getPower() + " Cost: " + unit.getCost());
         }
     }
 

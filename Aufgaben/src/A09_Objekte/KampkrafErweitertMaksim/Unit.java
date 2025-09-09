@@ -2,13 +2,13 @@ package A09_Objekte.KampkrafErweitertMaksim;
 
 public class Unit {
     //Variables
-    String name;
-    Integer power;
-    Integer cost;
-    Integer lifepoints;
+    private String name;
+    private Integer cost;
+    private Integer lifepoints;
+    private Dice power;
 
     //Constructor
-    public Unit ( String name, Integer power, Integer cost, Integer lifepoints){
+    public Unit ( String name,Integer cost,  Integer lifepoints, Dice power){
         this.name = name;
         this.power = power;
         this.cost = cost;
@@ -17,15 +17,12 @@ public class Unit {
 
     //Getter & Setter
     public String getName(){return this.name;}
-    public Integer getPower(){return this.power;}
+    public String getPower(){return power.toString();}
+    public Integer getRoll(){return power.roll();}
     public Integer getCost(){return this.cost;}
     public Integer getLifepoints(){return this.lifepoints;}
-
-    public void setPower(int power){
-        if(power > 0){
-            this.power = power;
-        }
+    public Dice getDice() {
+        return power;
     }
 
-    //Methods
 }
