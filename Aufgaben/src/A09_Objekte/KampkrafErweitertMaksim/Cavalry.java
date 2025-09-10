@@ -1,6 +1,7 @@
 package A09_Objekte.KampkrafErweitertMaksim;
 
 public class Cavalry extends Unit{
+    private static final String TYPE = "Cavalry";
     public Cavalry(String name, Integer cost, Integer lifepoints, Dice power) {
         super(name, cost, lifepoints, power);
     }
@@ -14,5 +15,9 @@ public class Cavalry extends Unit{
             finalDamage *= 1.5; // +50% Schaden
         }
         return finalDamage;
+    }
+    @Override
+    public String getType() {
+        return TYPE;
     }
 }

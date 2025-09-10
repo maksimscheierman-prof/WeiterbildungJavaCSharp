@@ -1,7 +1,7 @@
 package A09_Objekte.KampkrafErweitertMaksim;
 
 public class Infantry extends Unit{
-
+    private static final String TYPE = "Infantry";
     // Konstruktor ohne UnitType
     public Infantry(String name, Integer cost, Integer lifepoints, Dice power) {
         super(name, cost, lifepoints, power);
@@ -17,5 +17,9 @@ public class Infantry extends Unit{
             finalDamage *= 1.5; // +50% Schaden
         }
         return finalDamage;
+    }
+    @Override
+    public String getType() {
+        return TYPE;
     }
 }

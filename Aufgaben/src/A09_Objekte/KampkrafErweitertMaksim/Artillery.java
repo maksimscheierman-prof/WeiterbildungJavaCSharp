@@ -1,6 +1,7 @@
 package A09_Objekte.KampkrafErweitertMaksim;
 
 public class Artillery extends Unit{
+    private static final String TYPE = "Artillery";
     public Artillery(String name,Integer cost, Integer lifepoints, Dice power) {
         super(name, cost, lifepoints, power);
     }
@@ -14,5 +15,9 @@ public class Artillery extends Unit{
             finalDamage *= 1.5; // +50% Schaden
         }
         return finalDamage;
+    }
+    @Override
+    public String getType() {
+        return TYPE;
     }
 }

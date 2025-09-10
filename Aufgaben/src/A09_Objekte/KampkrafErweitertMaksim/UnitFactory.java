@@ -13,8 +13,10 @@ public class UnitFactory {
 
         String[] adjectives = {"Fierce", "Dark", "Swift", "Brutal", "Mighty", "Ancient", "Cunning", "Savage"};
         String[] creatures = {"Goblin", "Orc", "Knight", "Mage", "Skeleton", "Assassin", "Dragon", "Troll", "Zombie"};
+        String[] types = {"inf", "cav", "art"};
 
         for (int i = 1; i <= 100; i++) {
+
             // Random name from adjective + creature + number
             String name = adjectives[random.nextInt(adjectives.length)] +
                     " " +
@@ -35,7 +37,19 @@ public class UnitFactory {
             String formula = numDice + "d" + sides;
             if (modifier > 0) formula += "+" + modifier;
 
-            templates.add(new Unit(name, cost, lifepoints, new Dice(formula)));
+            //Random types
+            String type = types[random.nextInt(types.length)];
+            switch (type){
+                case "inf":
+                    templates.add(new Infantry(name, cost, lifepoints, new Dice(formula)));
+                    break;
+                case "art":
+                    templates.add(new Artillery(name, cost, lifepoints, new Dice(formula)));
+                    break;
+                case "cav":
+                    templates.add(new Cavalry(name, cost, lifepoints, new Dice(formula)));
+            }
+
         }
     }
 
@@ -47,16 +61,18 @@ public class UnitFactory {
         for (int i = 0; i < numberOfUnits; i++) {
             Unit template = templates.get(random.nextInt(templates.size()));
 
-            int count = nameCounters.getOrDefault(template.getName(), 0) + 1;
-            nameCounters.put(template.getName(), count);
+            Dice newDice = new Dice(template.getPower());
 
-            // Create fresh copy with unique name
-            Unit newUnit = new Unit(
-                    template.getName() + " #" + count,
-                    template.getCost(),
-                    template.getLifepoints(),
-                    new Dice(template.getPower())  // dice formula string
-            );
+            Unit newUnit;
+            if (template instanceof Infantry) {
+                newUnit = new Infantry(template.getName(), template.getCost(), template.getLifepoints(), newDice);
+            } else if (template instanceof Cavalry) {
+                newUnit = new Cavalry(template.getName(), template.getCost(), template.getLifepoints(), newDice);
+            } else if (template instanceof Artillery) {
+                newUnit = new Artillery(template.getName(), template.getCost(), template.getLifepoints(), newDice);
+            } else {
+                throw new IllegalStateException("Unknown unit type: " + template.getClass());
+            }
 
             result.add(newUnit);
         }
