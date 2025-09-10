@@ -1,40 +1,62 @@
 package A09_Objekte.KampkrafErweitertMaksim;
 
-public class Unit {
+public abstract class Unit {
+    private static int nextId = 1;
     //Variables
+    private final int id;
     private String name;
     private Integer cost;
     private Integer lifepoints;
     private Dice power;
+    private int maxLifepoints;
 
     //Constructor
     public Unit ( String name,Integer cost,  Integer lifepoints, Dice power){
+        this.id = nextId++;
         this.name = name;
         this.power = power;
         this.cost = cost;
         this.lifepoints = lifepoints;
+        this.maxLifepoints = lifepoints; //initial max hp
     }
 
     //Getter & Setter
-    public String getName(){return this.name;}
-    public String getPower(){return power.toString();}
-    public Integer getRoll(){return power.roll();}
-    public Integer getCost(){return this.cost;}
-    public Integer getLifepoints(){return this.lifepoints;}
+    public int getId() { return id; }
+    public String getName() { return name; }
+    public int getCost() { return cost; }
+
+    public void setLifepoints(Integer lifepoints) {
+        this.lifepoints = lifepoints;
+    }
+    public int getMaxLifepoints() {
+        return maxLifepoints;
+    }
+    public int getLifepoints() { return lifepoints; }
+    public String getPower() { return power.toString(); }
+    public int getRoll() { return power.roll(); }
     public Dice getDice() {
         return power;
     }
+    public abstract String getType();
 
     //Methods
     public int calculateDamage(Unit opponent) {
         return this.getRoll(); // Basisschaden
     }
 
+
     @Override
     public String toString() {
-        // Die Ausgabe des Typs erfolgt jetzt über den Klassennamen
-        return String.format("Einheit: %s (%s) | Stärke: %d, Leben: %d, Kosten: %d",
-                this.name, this.getClass().getSimpleName(), this.power, this.lifepoints, this.cost);
+        return String.format(
+                "ID: %d | Einheit: %s (%s) | Stärke: %s, Leben: %d, Kosten: %d, Type: %s",
+                id,
+                this.name,
+                this.getClass().getSimpleName(),
+                this.power.toString(),
+                this.lifepoints,
+                this.cost,
+                getType()
+        );
     }
 }
 
