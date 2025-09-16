@@ -35,11 +35,11 @@ public class b_CheckedUnchecked {
          * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
         /**         BEISPIEL        */
-       // FileReader datei1 = new FileReader("adresse der Datei");              // Der Compiler verbietet uns diese Funktion auszuführen
+        //FileReader datei1 = new FileReader("adresse der Datei");              // Der Compiler verbietet uns diese Funktion auszuführen
                                                                                 // Weil die Methode FileReader einen "checked" Exception auswirft.
 
         /*** * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-         *   Entkommentiere Zeile 28 und du wirst sehen, dass der Compiler dir einen Fehler auswirft.
+         *   Entkommentiere Zeile 38 und du wirst sehen, dass der Compiler dir einen Fehler auswirft.
          *
          *   Es wird von dir erwartet! dass du die Zeile in einen try-catch Block einschließt!
          *   FileReader() wirft eine "FileNotFoundException" Exception aus.
@@ -78,7 +78,7 @@ public class b_CheckedUnchecked {
         int zahl1       = 10;
         int zahl2       = 0;
         int ergebnis    = 0;
-       //  ergebnis = zahl1/zahl2;
+        ergebnis = zahl1/zahl2;
         /*** * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
          *   Entkommentiere die Zeile 81 und führe das Programm aus:
          *   Weil teilen durch 0 nicht möglich ist, wird eine "ArithmeticException" ausgelöst.

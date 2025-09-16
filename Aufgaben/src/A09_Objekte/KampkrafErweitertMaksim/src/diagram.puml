@@ -1,0 +1,69 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+abstract class Unit {
+  - name : String
+  - lifepoints : int
+  - power : Dice
+  + calcDmg(opponent:Unit) : int
+}
+
+class Infantry {
+  + calcDmg(opponent:Unit) : int
+}
+
+class Cavalry {
+  + calcDmg(opponent:Unit) : int
+}
+
+class Artillery {
+  + calcDmg(opponent:Unit) : int
+}
+
+class Dice {
+  + roll() : int
+}
+
+class Team {
+  - gold : int
+  - units : List<Unit>
+  + addUnit(Unit)
+  + resetUnits()
+}
+
+class Shop {
+  + showStock()
+  + buyUnit(int, Team)
+}
+
+class UnitFactory {
+  + createUnits(int) : List<Unit>
+}
+
+class Simulation {
+  - user : Team
+  - enemy : Team
+  - shop : Shop
+  + simulate()
+  - fight()
+}
+
+class Main {
+  + main(String[])
+}
+
+' =============== Beziehungen ===============
+Unit <|-- Infantry
+Unit <|-- Cavalry
+Unit <|-- Artillery
+
+Unit ..> Dice : uses
+Team *-- Unit : "1..*"
+Shop o-- Team
+UnitFactory ..> Unit : creates
+Simulation --> Team
+Simulation --> Shop
+Main ..> Simulation : runs
+
+@enduml
