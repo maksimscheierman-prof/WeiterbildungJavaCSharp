@@ -40,7 +40,7 @@ public class Aufgaben {
  *                  Hinweis: vielleicht brauchst du eine zusätzliche static variable ;)
  *                  Tipp: Du kannst eine neue Methode dafür anlegen und diese in generateBelt aufrufen.
  *
- *              Hinweis:    Weil ich euch kenne anbei der Tipp:
+ *              Tipp:
  *                          - Wenn ihr den Gesamtpreis innerhalb der Klasse haben wollt braucht ihr hierfür eine
  *                            weitere static Variable!
  *                          - Ihr könnt den Gesamtpreis aber auch in der Main berechnen, wenn ihr euch
