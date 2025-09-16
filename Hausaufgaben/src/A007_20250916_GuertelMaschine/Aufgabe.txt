@@ -1,0 +1,13 @@
+
+
+          - Es soll ein Bestellsystem geben für Gürtel:
+          - Die Maschine kann Gürtellängen zwischen 80 und 170 cm herstellen.
+          - Es gibt einen Mengenrabatt auf Meter
+          -        < 10.000 cm : 0,10 cent pro Meter.
+                   < 20.000 cm : 0,08 cent pro Meter.
+                   < 40.000 cm : 0,07 cent pro Meter.
+                   > 39.999 cm : 0,06 cent pro Meter.
+          -> Teste das System mit:
+                 a) Erstelle 200 Gürtel mit der Länge 80 cm
+                 b) Erstelle 100 Gürtel mit der länge 110 cm
+                 c) Erstelle 300 Gürtel mit der Länge 150 cm
