@@ -42,7 +42,7 @@ public class c_theorie_throws {
     public static void main(String[] args){
 
         /*** * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-         * checkAge benutzt eine unchecked IOException, also ist der untere try-catch Block optional.
+         * checkAge benutzt eine unchecked ArithmeticException, also ist der untere try-catch Block optional.
          * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
         try {

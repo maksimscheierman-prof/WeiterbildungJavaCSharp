@@ -17,7 +17,7 @@ public class Aufgaben {
  *              c) Erstelle getter und setter.
  *      ******************************************************************************************* </p>
  *
- *     Aufgabe 2
+ *      Aufgabe 2
  *      <p>*******************************************************************************************
  *            2. Erstelle eine Klasse Belt
  *              b) Die Klasse soll von Kleidung erben
@@ -32,28 +32,34 @@ public class Aufgaben {
  *              e) erstelle in der Klasse Belt eine neue static Variable price !
  *                  HINWEIS: Diese Variable bezieht sich auf den Meterpreis!
  *              f) erstelle in der Klasse Belt eine neue getter Methode für die statische Variable price!
- *              g) Der Preis für eine Gürtelbestellung soll von der Gesamtlänge abhängig sein.
+ *              g) Der Preis für eine Gürtelbestellung soll von der Gesamtlänge der Bestellung abhängig sein.
  *                  < 10.000 cm : 0,10 cent pro Meter.
  *                  < 20.000 cm : 0,08 cent pro Meter.
  *                  < 40.000 cm : 0,07 cent pro Meter.
  *                  > 39.999 cm : 0,06 cent pro Meter.
- *                  Hinweis: vielleicht brauchst du eine zusätzliche static variable ;)
- *                  Tipp: Du kannst eine neue Methode dafür anlegen und diese in generateBelt aufrufen.
- *
- *              Hinweis:    Weil ich euch kenne anbei der Tipp:
- *                          - Wenn ihr den Gesamtpreis innerhalb der Klasse haben wollt braucht ihr hierfür eine
- *                            weitere static Variable!
- *                          - Ihr könnt den Gesamtpreis aber auch in der Main berechnen, wenn ihr euch
- *                            den Preis/Meter und die Gesamtmeter ausgeben lasst!
- *
+ *                  Hierfür wird eine Logik benötigt. (ggfs. eigene Klasse?)
  *          3. Erstelle eine Main Methode
  *              a) Erstelle 200 Gürtel mit der Länge 80 cm
  *              b) Erstelle 100 Gürtel mit der länge 110 cm
  *              c) Erstelle 300 Gürtel mit der Länge 150 cm
  *          4. Lasse dir den Gesamtpreis ausgeben.
+ *
+ * __________ Alternativtext: __________________________________________________________________________________________
+ *
+ *          - Es soll ein Bestellsystem geben für Gürtel:
+ *          - Die Maschine kann Gürtellängen zwischen 80 und 170 cm herstellen.
+ *          - Es gibt einen Mengenrabatt auf Meter
+ *          -        < 10.000 cm : 0,10 cent pro Meter.
+ *                   < 20.000 cm : 0,08 cent pro Meter.
+ *                   < 40.000 cm : 0,07 cent pro Meter.
+ *                   > 39.999 cm : 0,06 cent pro Meter.
+ *          -> Teste das System mit:
+ *                 a) Erstelle 200 Gürtel mit der Länge 80 cm
+ *                 b) Erstelle 100 Gürtel mit der länge 110 cm
+ *                 c) Erstelle 300 Gürtel mit der Länge 150 cm
+ *
  *      ******************************************************************************************* </p>
  *
-
  *
  *
  *
