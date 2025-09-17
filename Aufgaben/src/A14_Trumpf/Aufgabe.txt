@@ -1,0 +1,28 @@
+
+
+    / *** /
+    Ziel: Wiederholen aller Inhalte
+    / *** /
+
+
+    Aufgabe: Trumpf
+
+    Rahmenbedingungen:
+    - Es sollen "Karten" verteilt werden
+    - Du spielst gegen den Computer, der dir unbekannte Karten hat.
+    - Allen Teilnehmenden werden 5 Karten ausgeteilt
+    - Die Karten enthalten verschiedene Parameter die gegeneinander ausgespielt werden müssen.
+    - Freie Kategorien: z.B. Tiere, Roboter, Monster, Autos, Superhelden,
+    -> Spielprinzip:
+    - 0. Kartendeck auswählen (OPTIONAL; NUR AM ENDE WENN VIEL ZEIT)
+    - 1. Karten austeilen
+    - 2. Parameter auswählen
+    - 3. Auswählen: höchster/niedrigster Wert gewinnt. (Optional, beginne erstmal mit einem.)
+    - 4. Auswerten: Wer gewinnt.
+    - 5. Nach der letzten Karte: Wer hat am häufigsten gewonnen?
+    Optionale:
+    - Auswahl zwischen niedrigstem/höchstem Wert
+    - Kartendeck auswählen (mehrere Decks)
+    - Die verlierer Karte, geht an die siegende Person, spielen bis Handkarte leer ist.
+    - PC wählt auch als erstes aus.
+
