@@ -5,11 +5,10 @@ import java.util.*;
 public class Game {
     private Queue<Card> playerDeck;
     private Queue<Card> computerDeck;
-    private Scanner scanner;
+    private final Scanner scanner = new Scanner(System.in);;
 
     public Game(Deck deck) {
         deck.shuffle();
-        scanner = new Scanner(System.in);
 
         // 5 Karten austeilen
         playerDeck = new LinkedList<>();

@@ -24,10 +24,6 @@ public class Deck {
         cards.add(card);
     }
 
-    public List<Card> geteCards(){
-        return cards;
-    }
-
     public void shuffle(){
         Collections.shuffle(cards);
     }
