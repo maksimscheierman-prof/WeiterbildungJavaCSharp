@@ -1,7 +1,10 @@
-package T21_Instance_Initializer.Aufgabe;
 
-public class Aufgabe {
-    /**
+
+
+
+
+
+
      *      Aufgabe zu Instance Initializer
 
      Aufgabe
@@ -15,6 +18,28 @@ public class Aufgabe {
         -> Standartwerte: Material Wolle, Preis 0.05E,
 
      ******************************************************************************************* </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
      Teilschritte (Können ignoriert werden oder zur Hilfe genutzt werden)
@@ -73,6 +98,3 @@ public class Aufgabe {
 
               8. Lass dir den Gesamtpreis für alle Kleidungen auf der Konsole ausgeben.
      ******************************************************************************************* </p>
-
-     */
-}
