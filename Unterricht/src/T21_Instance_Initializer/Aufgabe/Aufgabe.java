@@ -1,0 +1,78 @@
+package T21_Instance_Initializer.Aufgabe;
+
+public class Aufgabe {
+    /**
+     *      Aufgabe zu Instance Initializer
+
+     Aufgabe
+     <p>*******************************************************************************************
+        Erstelle ein Programm für eine Maschine, die verschiedene Tshirts und Pullover
+        herstellt.
+        - Es soll eine Marke aufgedruckt werden können
+        - Tshirts können mit verschiedenen Kragen hergestellt werden.
+        - Pullover können mit oder ohne Kappuze gebaut werden.
+        - Kosten richten sich nach Stückpreis (Optional Mengenrabatt)
+        -> Standartwerte: Material Wolle, Preis 0.05E,
+
+     ******************************************************************************************* </p>
+
+
+     Teilschritte (Können ignoriert werden oder zur Hilfe genutzt werden)
+
+     Teilschritt 1
+     <p>*******************************************************************************************
+           1. Erstelle eine Klasse Kleidung
+              a) Die Klasse soll folgende Eigenschaften haben:
+                - Stoff // Soll die Art des Stoffes speichern
+                - Preis // soll den Preis speichern
+                - anzahlKleidung // Soll für jedes erstellte Kleidungsstück eins hochzählen.
+     ******************************************************************************************* </p>
+
+    Teilschritt 2
+     <p>*******************************************************************************************
+           2. Erstelle eine Klasse tShirt
+               a) Die Klasse soll folgende Eigenschaften haben:
+                   - marke // speichert die Marke des Tshirts
+                   - Kragentyp // speichert den Kragentyp des Tshirts
+                   - anzahlTshirt // soll für alle erstellten Tshirts hochzählen
+              b) Die Klasse soll folgende Konstruktoren haben:
+                   - Standardkonstruktor
+                       setzt marke auf "NoName", setzt Kragentyp auf "rund"
+                   - Konstruktor mit 2 Überladungen
+                       setzt Marke und Kragentyp
+                   - Konstruktor mit 3 Überladungen
+                       setzt Marke, Kragentyp und Stoff.
+                   - Wenn nichts weiter angegeben soll der Preis immer 0.05 sein und der Stoff "Wolle".
+              c) Es soll folgende Methoden geben:
+                   - info() // Soll dem Nutzer als String die Marke, Stoff, Kragentyp und Preis zurückgeben.
+              d) Es soll folgende getter geben:
+                   - getAnzahlTshirts// hier sollen die Anzahl der erstellten Shirts zurückgegeben werden.
+     ******************************************************************************************* </p>
+
+    Teilschritt 3
+     <p>*******************************************************************************************
+           3. Erstelle eine Klasse Pullover
+               a) Die Klasse soll folgende Eigenschaften haben:
+                   - marke // speichert die Marke
+                   - Kappuze // speichert ob der Pullover mit oder ohne Kappuze ist.
+                   - anzahlPulli // soll für alle erstellten Pullis hochzählen
+              b)   - Wenn nichts weiter angegeben soll der Preis immer 0.15 und der Stoff "Wolle" sein.
+              c) Es soll folgende Methoden geben:
+                   - info() // Soll dem Nutzer als String die Marke, Stoff, Kapuzentyp und Preis zurückgeben.
+              d) Es soll folgende getter geben:
+                   - getAnzahlPullis // hier sollen die Anzahl der erstellten Pullis zurückgegeben werden.
+     ******************************************************************************************* </p>
+
+    Teilschritt 4
+     <p> *******************************************************************************************
+           Erstelle eine neue Klasse mit einer Main-Methode:
+              4. erstelle 412 Tshirts mit V-Ausschnitt
+              5. erstelle weitere 234 Tshirts mit Rundauschnitt
+              6. erstelle 253 Pullis
+              7. Nachbestellung: erstelle 101 weitere Tshirts mit rundausschnitt.
+
+              8. Lass dir den Gesamtpreis für alle Kleidungen auf der Konsole ausgeben.
+     ******************************************************************************************* </p>
+
+     */
+}
