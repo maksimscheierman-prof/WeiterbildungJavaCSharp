@@ -1,0 +1,49 @@
+Auftraggeber:
+Die Firma MessageTech GmbH möchte ein Programm entwickeln, das verschiedene Arten von Nachrichten darstellen und verschicken kann.
+
+1. Nachrichtenarten:
+
+E-Mail
+SMS
+Brief
+
+
+2. Versand:
+
+Jede Nachricht soll verschickt werden können. (In der Konsolen soll z.B. ausgegeben werden: "Die Email an xyz@gmail.com mit dem Betreff... und der Nachricht... wurde am 30.09.2025 versendet."
+
+Die send-Methode soll die Versanddauer zurückgeben.
+
+Die Versanddauer in Sekunden soll zufällig innerhalb typischer Werte berechnet werden:
+
+E-Mail: 1–5 Sekunden
+SMS: 1–2 Sekunden
+Brief: 1-3 Tage
+
+
+3. Anzeige der Nachrichten:
+Jede Nachricht soll angezeigt werden können (In der Konsole ausgegeben werden)
+
+E-Mail: Mail-Adresse von Absender und Empfänger, Betreff, Nachrichtentext
+
+SMS: Absendernummer, Empfängernummer, Nachrichtentext
+
+Brief: Absenderadresse, Empfängeradresse, Portokosten, Nachrichtentext
+
+
+4.
+Zusätzlich zur normalen Anzeige-Methode soll es eine Variante geben, die nur die ersten n Zeichen des Nachrichttexts anzeigt (Vorschau).
+
+
+5. Test-Klasse mit main-Methode
+
+Erstelle mehrere Nachrichtenobjekte verschiedener Typen.
+
+Verschicke alle Nachrichten und gib die Versanddauer aus.
+
+Zeige alle Nachrichten in voller Länge und in gekürzter Vorschau an.
+
+
+Tipp: Verwende für die Anzeige des Datums die LocalDate-Klasse
+
+Bonus: Berechne die Portokosten eines Briefs anhand der Länge der Nachricht
