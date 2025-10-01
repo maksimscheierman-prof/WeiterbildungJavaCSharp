@@ -16,6 +16,7 @@ public class Main {
             // Polymorphie + spezifische Methoden
             if (t instanceof Hauskatze) {
                 ((Hauskatze) t).spielen();
+                ((Hauskatze) t).spielen(10);
                 ((Hauskatze) t).schnurren();
             } else if (t instanceof Raubkatze) {
                 ((Raubkatze) t).jagen();

@@ -13,4 +13,8 @@ class Hauskatze extends Katze {
     public void spielen() {
         System.out.println(name + " spielt mit einem Wollknäuel.");
     }
+    // Überladene Methode (Overloading)
+    public void spielen(int minuten) {
+        System.out.println(name + " spielt " + minuten + " Minuten lang mit einem Wollknäuel.");
+    }
 }
