@@ -1,0 +1,5 @@
+-In der abstrakten Klasse Tier soll es eine abstrakte Methode geben (z.B. makeSound()) und eine konkrete Methode (z.B.sleep()). Die abstrakte Methode soll am besten für alle Tiere gelten, aber jedes Tier macht es anders
+-In der Klasse Hund soll die abstrakte Methode überschrieben werden. (Wie macht ein Hund? :D ). Erweitere die Hundklasse um eine Methode oder Eigenschaft, die nur Hunde haben (z.B. Stöcken holen oder ähnliches).
+-Schreibe die abstrakte Klasse Katze, definiere eine weitere Methode. Überschreibe NICHT die abstrakte Methode.
+-Schreibe die Klassen Hauskatze und Raubkatze. Zu welchem Fehler kommt ihr? Warum? Wie kann man das verbessern?
+-Überlade mindestens eine Methode.
