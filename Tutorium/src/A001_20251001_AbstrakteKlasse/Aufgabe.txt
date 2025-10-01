@@ -1,0 +1,3 @@
+Vehicle hat die abstrakte Methode move() und die konkrete Methode printType(){System.out.println(„Ich bin ein Fahrzeug“);}
+Die Klasse MotorVehicle hat eine abstrakte Methode fuel().
+Achte darauf, wann eine Methode implementiert werden muss. Muss eine abstrakte Klasse die abstrakte Methode implementieren?
