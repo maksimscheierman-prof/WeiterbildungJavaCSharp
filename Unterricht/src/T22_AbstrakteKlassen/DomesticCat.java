@@ -1,6 +1,6 @@
 package T22_AbstrakteKlassen;
 
-public class DomesticCat extends Cat{
+class DomesticCat extends Cat{
 
     @Override
     void hunt() {

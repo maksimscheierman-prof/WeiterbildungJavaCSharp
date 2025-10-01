@@ -6,6 +6,6 @@ package T22_AbstrakteKlassen;
  Die erste KONKRETE (nicht abstrakte) Klasse MUSS noch nicht implementierte,
  abstrakte Methoden aller Superklassen implmentieren
  */
-public abstract class Cat extends Animal{
+abstract class Cat extends Animal{
     abstract void hunt();
 }
