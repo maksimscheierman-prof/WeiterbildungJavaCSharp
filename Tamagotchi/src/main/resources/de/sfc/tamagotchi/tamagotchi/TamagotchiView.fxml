@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #e1bee7, #f8bbd0);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.sfc.tamagotchi.tamagotchi.TamagotchiViewController">
+   <children>
+      <!-- Haustier Kreis mit Schatten -->
+      <Circle fx:id="petCircle" fill="linear-gradient(to bottom, #f2aae2, #7e57c2)" layoutX="330.0" layoutY="226.0" radius="95.0" stroke="WHITE" strokeWidth="4.0">
+         <effect>
+            <DropShadow fx:id="colorOfPet" color="#8e24aa" radius="15" />
+         </effect>
+      </Circle>
+      <Label fx:id="moodLabel" alignment="CENTER" layoutX="265.0" layoutY="192.0" prefHeight="70.0" prefWidth="130.0" style="-fx-text-fill: #4e4e4e;" text="😊" textAlignment="CENTER">
+         <font><Font name="Comic Sans MS" size="36.0" /></font>
+      </Label>
+
+      <!-- Vital Anzeigen mit Balkenfarben passend zu Buttons -->
+      <Label layoutX="60.0" layoutY="28.0" style="-fx-font-size:18; -fx-text-fill:#7e57c2;" text="Happiness:" />
+      <!-- Happiness Balken in Farbe Play Button -->
+      <Rectangle fx:id="happinessRect" arcHeight="10.0" arcWidth="10.0" fill="linear-gradient(to right, #d4ffd6, #388e3c)" height="20.0" layoutX="170.0" layoutY="33.0" stroke="WHITE" width="350.0" />
+
+      <Label layoutX="60.0" layoutY="62.0" style="-fx-font-size:18; -fx-text-fill:#d32f2f;" text="Hunger:" />
+      <!-- Hunger Balken in Farbe Feed Button -->
+      <Rectangle fx:id="hungerRect" arcHeight="10.0" arcWidth="10.0" fill="linear-gradient(to right, #ffd6d6, #d32f2f)" height="20.0" layoutX="170.0" layoutY="67.0" stroke="WHITE" width="350.0" />
+
+      <Label layoutX="60.0" layoutY="96.0" style="-fx-font-size:18; -fx-text-fill:#1976d2;" text="Sleepiness:" />
+      <!-- Sleepiness Balken in Farbe Change Pet Button -->
+      <Rectangle fx:id="sleepinessRect" arcHeight="10.0" arcWidth="10.0" fill="linear-gradient(to right, #e1bee7, #7e57c2)" height="20.0" layoutX="170.0" layoutY="101.0" stroke="WHITE" width="350.0" />
+
+      <!-- Aktionen als abgerundete Buttons -->
+      <Button fx:id="hugButton" layoutX="45.0" layoutY="330.0" onMouseClicked="#hug" prefHeight="60.0" prefWidth="120.0" style="-fx-background-radius:30; -fx-background-color:#ffd6fd; -fx-text-fill:#7e57c2; -fx-font-size:19;" text="Hug" />
+      <Button fx:id="sleepButton" layoutX="180.0" layoutY="330.0" onMouseClicked="#sleep" prefHeight="60.0" prefWidth="120.0" style="-fx-background-radius:30; -fx-background-color:#bbe6ff; -fx-text-fill:#1976d2; -fx-font-size:19;" text="Sleep" />
+      <Button fx:id="wakeUpButton" layoutX="366.0" layoutY="338.0" onMouseClicked="#wakeUp" prefHeight="45.0" prefWidth="175.0" style="-fx-background-radius:22; -fx-background-color:#c5cae9; -fx-text-fill:#3949ab; -fx-font-size:17;" text="Wake Up" />
+
+      <!-- HBox mit ComboBox + Button nebeneinander, zentriert und mit Abstand -->
+      <HBox alignment="CENTER" layoutX="180.0" layoutY="400.0" spacing="18">
+         <ComboBox fx:id="feedComboBox" prefWidth="146.0" style="-fx-font-size:16; -fx-background-color:#feeaea; -fx-border-radius:18;" />
+         <Button fx:id="feedButton" onMouseClicked="#feed" prefHeight="45.0" prefWidth="97.0" style="-fx-background-radius:22; -fx-background-color:#ffd6d6; -fx-text-fill:#d32f2f; -fx-font-size:17;" text="Feed" />
+      </HBox>
+
+      <HBox alignment="CENTER" layoutX="180.0" layoutY="460.0" spacing="18">
+         <ComboBox fx:id="playComboBox" prefWidth="146.0" style="-fx-font-size:16; -fx-background-color:#eaffea; -fx-border-radius:18;" />
+         <Button fx:id="playButton" onMouseClicked="#play" prefHeight="45.0" prefWidth="97.0" style="-fx-background-radius:22; -fx-background-color:#d4ffd6; -fx-text-fill:#388e3c; -fx-font-size:17;" text="Play" />
+      </HBox>
+
+      <HBox alignment="CENTER" layoutX="180.0" layoutY="520.0" spacing="18">
+         <ComboBox fx:id="changePetComboBox" prefWidth="146.0" style="-fx-font-size:16; -fx-background-color:#f1eafd; -fx-border-radius:18;" />
+         <Button fx:id="changePetButton" onMouseClicked="#changePet" prefHeight="45.0" prefWidth="150.0" style="-fx-background-radius:22; -fx-background-color:#e1bee7; -fx-text-fill:#7e57c2; -fx-font-size:17;" text="Change Pet" />
+      </HBox>
+
+      <!-- Nachrichtenbereich -->
+      <TextArea fx:id="textArea" layoutX="20.0" layoutY="570.0" prefHeight="210.0" prefWidth="560.0" style="-fx-background-color:#fff8e1; -fx-border-radius:15; -fx-background-radius:15; -fx-font-size:16;" />
+
+   </children>
+</Pane>
