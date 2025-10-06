@@ -5,11 +5,11 @@ package de.sfc.tamagotchi.tamagotchi.pets;
  * Abstract class Pet. Should define the basis of every subclass of pet.
  * //TODO: Implement the Interface Huggable here.
  */
-public abstract class Pet {
+public abstract class Pet implements Huggable{
     private final String name;
-    private int happiness;
-    private int hungriness;
-    private int sleepiness;
+    private double happiness;
+    private double hungriness;
+    private double sleepiness;
     private boolean isSleeping;
     private boolean isDead;
 
@@ -21,27 +21,27 @@ public abstract class Pet {
         this.isSleeping = isSleeping;
     }
 
-    public int getSleepiness() {
+    public double getSleepiness() {
         return sleepiness;
     }
 
-    public void setSleepiness(int sleepiness) {
+    public void setSleepiness(double sleepiness) {
         this.sleepiness = sleepiness;
     }
 
-    public int getHungriness() {
+    public double getHungriness() {
         return hungriness;
     }
 
-    public void setHungriness(int hungriness) {
+    public void setHungriness(double hungriness) {
         this.hungriness = hungriness;
     }
 
-    public int getHappiness() {
+    public double getHappiness() {
         return happiness;
     }
 
-    public void setHappiness(int happiness) {
+    public void setHappiness(double happiness) {
         this.happiness = happiness;
     }
 
@@ -63,6 +63,14 @@ public abstract class Pet {
 
     public boolean isDead() {
         return isDead;
+    }
+
+    @Override
+    public abstract String hug();
+
+    @Override
+    public String toString() {
+        return name; // 👈 Zeigt nur den Namen im Dropdown an
     }
 
 }

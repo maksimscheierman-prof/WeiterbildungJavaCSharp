@@ -7,13 +7,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
 /**
  * The TamagotchiView class represents the graphical user interface for interacting with the Tamagotchi pet.
  * It allows the user to feed the pet, make it sleep, wake it up, and change the pet type.
  */
 public class TamagotchiView extends Application {
-
 
     /**
      * Starts the graphical user interface.
@@ -30,11 +28,20 @@ public class TamagotchiView extends Application {
         // Create a scene with the loaded FXML
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        stage.setTitle("Tamagotchi");
         stage.show();
 
-        //UiHelper helps to use the graphical user interface easily
-        //TODO: Nutze den uiHelper, um die DropDown Menüs zu füllen
+        // UIHelper helps to use the graphical user interface easily
+        // TODO: Nutze den uiHelper, um die DropDown Menüs zu füllen
         UIHelper uiHelper = new UIHelper(controller);
+
+        uiHelper.populateFoodComboBox(controller.getFeedComboBox());
+        uiHelper.populatePetComboBox(controller.getChangePetComboBox());
+        uiHelper.populateToyComboBox(controller.getPlayComboBox());
+        // -------------------------------------
+
+        // Optional: ein Beispieltext oder Hinweis für die Benutzer
+        System.out.println("Tamagotchi gestartet! Wähle dein Haustier aus der Liste aus.");
     }
 
     public static void main(String[] args) {
