@@ -1,7 +1,5 @@
 package A008_20250930_Firmenanfrage;
 
-import java.time.LocalDate;
-import java.util.Random;
 
 // Abstrakte Basisklasse
 abstract class Nachricht {
