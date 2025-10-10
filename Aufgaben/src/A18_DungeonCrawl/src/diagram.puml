@@ -66,17 +66,19 @@ abstract class Unit {
   - race : Race
   - weapon : Weapon
   - dmgBonus : int
+  - items : List<Item>
+  + addItem()
   + fight(Unit defender)
   + calcDmg() : double
   + updateLifepoints(Unit target)
 }
 
 class Hero extends Unit{
+
   + calcDmg() : double
 }
 
 class Monster extends Unit{
-  - item : Item
   + calcDmg() : double
   + dropItem() : Item
 }
@@ -143,6 +145,7 @@ class Main {
 Unit *-- Archetype : "1"
 Unit *-- Race : "1"
 Unit *-- Weapon : "1"
+Unit *-- Item : "0..*"
 
 Dungeon *-- Chapter : "4..*"
 Chapter *-- Room : "1..3"
@@ -151,6 +154,7 @@ Room *-- Item : "0..*"
 Room *-- Quest : "1"
 Item *-- Effect : "1..*"
 Race *-- Effect : "2"
+
 
 
 MonsterFactory ..> Monster : creates
