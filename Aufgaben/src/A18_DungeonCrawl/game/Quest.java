@@ -1,4 +1,4 @@
-package A18_DungeonCrawl;
+package A18_DungeonCrawl.game;
 
 public class Quest {
     private String requirement;

@@ -1,4 +1,8 @@
-package A18_DungeonCrawl;
+package A18_DungeonCrawl.world;
+
+import A18_DungeonCrawl.items.Item;
+import A18_DungeonCrawl.units.Monster;
+import A18_DungeonCrawl.game.Quest;
 
 import java.util.List;
 

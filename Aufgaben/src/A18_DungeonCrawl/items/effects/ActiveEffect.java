@@ -1,4 +1,6 @@
-package A18_DungeonCrawl;
+package A18_DungeonCrawl.items.effects;
+
+import A18_DungeonCrawl.units.Unit;
 
 public class ActiveEffect implements Effect{
     private Integer duration;

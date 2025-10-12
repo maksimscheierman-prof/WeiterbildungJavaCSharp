@@ -1,4 +1,9 @@
-package A18_DungeonCrawl;
+package A18_DungeonCrawl.units;
+
+import A18_DungeonCrawl.archetypes.Archetype;
+import A18_DungeonCrawl.items.Item;
+import A18_DungeonCrawl.races.Race;
+import A18_DungeonCrawl.weapons.Weapon;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,6 @@
-package A18_DungeonCrawl;
+package A18_DungeonCrawl.items;
+
+import A18_DungeonCrawl.items.effects.Effect;
 
 import java.util.List;
 

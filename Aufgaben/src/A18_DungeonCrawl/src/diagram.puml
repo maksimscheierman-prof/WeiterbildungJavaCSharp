@@ -87,21 +87,11 @@ class MonsterFactory {
   + createMonsters(int) : List<Monster>
 }
 
-abstract class Weapon {
+class Weapon {
+ - type : string
  - range : int
  - dmg : double
- - attackSpeed : double
- - critChance : double
- - critDmg : double
-}
 
-class Bow extends Weapon{
-}
-
-class Sword extends Weapon{
-}
-
-class Pike extends Weapon{
 }
 
 class Dungeon{
