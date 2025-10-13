@@ -20,6 +20,10 @@ public class Room {
         this.quest = quest;
     }
 
+    public Room() {
+
+    }
+
     public String getDoor() {
         return door;
     }

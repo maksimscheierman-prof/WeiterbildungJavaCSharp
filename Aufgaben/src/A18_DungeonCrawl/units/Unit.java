@@ -9,13 +9,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Unit {
+    private String name;
     private Archetype archetype;
     private Race race;
     private Weapon weapon;
     private List<Item> items = new ArrayList<>();;
     private Integer dmgBonus;
 
-    public Unit(Archetype archetype, Race race, Weapon weapon, List<Item> items, Integer dmgBonus) {
+    public Unit(String name, Archetype archetype, Race race, Weapon weapon, List<Item> items, Integer dmgBonus) {
+        this.name = name;
         this.archetype = archetype;
         this.race = race;
         this.weapon = weapon;
@@ -23,7 +25,8 @@ public abstract class Unit {
         this.dmgBonus = dmgBonus;
     }
 
-    public Unit(Archetype archetype, Race race, Weapon weapon, Item item, Integer dmgBonus) {
+    public Unit(String name, Archetype archetype, Race race, Weapon weapon, Item item, Integer dmgBonus) {
+        this.name = name;
         this.archetype = archetype;
         this.race = race;
         this.weapon = weapon;
@@ -35,4 +38,6 @@ public abstract class Unit {
         items.add(item);
         item.applyEffect();
     }
+
+    public abstract Double dealDamge();
 }

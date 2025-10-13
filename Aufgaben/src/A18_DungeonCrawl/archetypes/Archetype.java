@@ -3,17 +3,18 @@ package A18_DungeonCrawl.archetypes;
 import A18_DungeonCrawl.weapons.Weapon;
 
 public abstract class Archetype {
-    private Double Lifepoints;
-    private Integer Strength;
-    private Integer Intelligence;
-    private Integer Dexterity;
+    private double lifepoints;
+    private int strength;
+    private int intelligence;
+    private int dexterity;
+
 
     public Integer getDexterity() {
-        return Dexterity;
+        return dexterity;
     }
 
     public void setDexterity(Integer dexterity) {
-        Dexterity = dexterity;
+        this.dexterity = dexterity;
     }
 
     public Double dealDamge(Weapon weapon){
@@ -21,33 +22,33 @@ public abstract class Archetype {
     }
 
     public Double getLifepoints() {
-        return Lifepoints;
+        return lifepoints;
     }
 
     public void setLifepoints(Double lifepoints) {
-        Lifepoints = lifepoints;
+        this.lifepoints = lifepoints;
     }
 
     public Integer getStrength() {
-        return Strength;
+        return strength;
     }
 
     public void setStrength(Integer strength) {
-        Strength = strength;
+        this.strength = strength;
     }
 
     public Integer getIntelligence() {
-        return Intelligence;
+        return intelligence;
     }
 
     public void setIntelligence(Integer intelligence) {
-        Intelligence = intelligence;
+        this.intelligence = intelligence;
     }
 
     public Archetype(Double lifepoints, Integer strength, Integer intelligence, Integer dexterity) {
-        Lifepoints = lifepoints;
-        Strength = strength;
-        Intelligence = intelligence;
-        Dexterity = dexterity;
+        this.lifepoints = lifepoints;
+        this.strength = strength;
+        this.intelligence = intelligence;
+        this.dexterity = dexterity;
     }
 }

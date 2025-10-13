@@ -4,38 +4,42 @@ import java.util.List;
 
 public class Chapter {
     private String narrative;
-
+    private String decision;
+    private Boolean isDecision = false;
     private int number;
-
     private List<Room> rooms;
 
-    public Chapter(String narrative, int number, List<Room> rooms) {
+
+
+    //Constructors
+    public Chapter(int number, String narrative, String decision, List<Room> rooms) {
+        this.narrative = narrative;
+        this.decision = decision;
+        this.isDecision = true;
+        this.number = number;
+        this.rooms = rooms;
+    }
+
+    public Chapter(int number, String narrative, List<Room> rooms) {
         this.narrative = narrative;
         this.number = number;
         this.rooms = rooms;
     }
 
+    //Getter
     public String getNarrative() {
         return narrative;
     }
 
-    public void setNarrative(String narrative) {
-        this.narrative = narrative;
+    public String getDecision() {
+        return decision;
     }
 
     public int getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
     public List<Room> getRooms() {
         return rooms;
-    }
-
-    public void setRooms(List<Room> rooms) {
-        this.rooms = rooms;
     }
 }

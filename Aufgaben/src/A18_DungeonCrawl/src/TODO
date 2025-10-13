@@ -1,1 +1,5 @@
-Initialerstellung der Klassen
+Heldenerstellung,Monstererstellung
+Schadesberechnung
+Abschluss Räumegenerierung
+Umstrukturierung ArcheType Attribute an Unit koppeln
+ArcheType nur einen Bonus zu bestimmt Attributen geben

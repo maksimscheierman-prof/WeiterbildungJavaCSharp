@@ -18,8 +18,13 @@ public class Quest {
 
     //TODO clearQuest Logik ausbauen
     public void clearQuest(Boolean questCleared) {
-        this.questCleared = true;
+        this.questCleared = questCleared;
     }
+
+    public void setRequirement(String requirement) {
+        this.requirement = requirement;
+    }
+
 
 
 }
