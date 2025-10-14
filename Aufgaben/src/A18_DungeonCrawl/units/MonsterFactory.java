@@ -31,9 +31,10 @@ public class MonsterFactory {
         Race race = getRandomRace();
         Weapon weapon = getRandomWeapon();
         Item item = getRandomItem();
-        int dmgBonus = random.nextInt(10) + 1;
+        double dmgBonus = random.nextInt(10) + 1;
+        double lifepoints = 40.0;
 
-        return new Monster(name, archetype, race, weapon, item, dmgBonus);
+        return new Monster(name, archetype, race, weapon, item, dmgBonus, lifepoints);
     }
 
     // ===== Hilfsmethoden =====

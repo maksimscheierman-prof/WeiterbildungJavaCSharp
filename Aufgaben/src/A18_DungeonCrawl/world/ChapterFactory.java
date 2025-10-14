@@ -1,5 +1,7 @@
 package A18_DungeonCrawl.world;
 
+import A18_DungeonCrawl.game.Quest;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +29,7 @@ public class ChapterFactory {
                 "2.Gehe durch die hölzerne Tür";
 
         List<Room> roomsChOne = new ArrayList<>();
-        //TODO Alle Räumneobjekte mit Monster,Items und einer Quest versehen
+
         roomsChOne.add(new Room());
         roomsChOne.add(new Room());
 
@@ -42,8 +44,12 @@ public class ChapterFactory {
         String decisionTwo = "";
 
         List<Room> roomsChTwo = new ArrayList<>();
-        //TODO Alle Räumneobjekte mit Monster,Items und einer Quest versehen
-        roomsChTwo.add(new Room());
+        Quest questDragon = new Quest("Besiege den Feuerdrachen!");
+
+        Room dragonRoom = new Room();
+        dragonRoom.setQuest(questDragon);
+
+        roomsChTwo.add(dragonRoom);
 
         Chapter Two = new Chapter(2, chapterTwo, roomsChTwo);
         chapters.add(Two);
@@ -59,7 +65,6 @@ public class ChapterFactory {
                 "3.Die Tür der Prüfungen des Herzens - Ein Raum, der deine Entscheidungen und deine Moral testet. Ein Schattenwesen stellt dir Fragen, die nicht nur Wissen, sondern auch Mut und Intuition verlangen.\n";
 
         List<Room> roomsChThree = new ArrayList<>();
-        //TODO Alle Räumneobjekte mit Monster,Items und einer Quest versehen
         roomsChThree.add(new Room());
         roomsChThree.add(new Room());
         roomsChThree.add(new Room());
@@ -76,7 +81,6 @@ public class ChapterFactory {
                 "2.Lass das Artefakt zurück";
 
         List<Room> roomsChFour = new ArrayList<>();
-        //TODO Alle Räumneobjekte mit Monster,Items und einer Quest versehen
         roomsChFour.add(new Room());
         Chapter Four = new Chapter(4, chapterFour, decisionFour, roomsChFour);
         chapters.add(Four);

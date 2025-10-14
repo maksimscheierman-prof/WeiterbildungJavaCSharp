@@ -2,7 +2,6 @@ package A18_DungeonCrawl.units;
 
 import A18_DungeonCrawl.archetypes.Archetype;
 import A18_DungeonCrawl.items.Item;
-import A18_DungeonCrawl.items.effects.Effect;
 import A18_DungeonCrawl.races.Elf;
 import A18_DungeonCrawl.races.Human;
 import A18_DungeonCrawl.races.Orc;
@@ -17,12 +16,12 @@ public abstract class Unit {
     private Archetype archetype;
     private Race race;
     private Weapon weapon;
-    private List<Item> items = new ArrayList<>();;
+    private List<Item> items = new ArrayList<>();
     private Double dmgBonus;
     private Double lifepoints;
 
     public Unit(String name, Archetype archetype, Race race, Weapon weapon,
-                List<Item> items, double dmgBonus, double baseLifepoints) {
+                       List<Item> items, double dmgBonus, double baseLifepoints) {
 
         this.name = name;
         this.archetype = archetype;
@@ -34,7 +33,21 @@ public abstract class Unit {
         // Lebenspunkte = Basis + Archetypenbonus
         this.lifepoints = baseLifepoints + archetype.getBonusLifepoints();
     }
-    // ====== Getter & Utility ======
+
+    public Unit(String name, Archetype archetype, Race race, Weapon weapon,
+                Item item, double dmgBonus, double baseLifepoints) {
+
+        this.name = name;
+        this.archetype = archetype;
+        this.race = race;
+        this.weapon = weapon;
+        this.items.add(item);
+        this.dmgBonus = dmgBonus;
+
+        // Lebenspunkte = Basis + Archetypenbonus
+        this.lifepoints = baseLifepoints + archetype.getBonusLifepoints();
+    }
+        // ====== Getter & Utility ======
     public double getLifepoints() { return lifepoints; }
 
     public void restoreHealth(double amount) {
@@ -71,9 +84,6 @@ public abstract class Unit {
     public List<Item> getItems() {
         return items;
     }
-
-    public abstract Double dealDamge();
-
 
 
     public void fight(Unit attacker, Unit defender) {

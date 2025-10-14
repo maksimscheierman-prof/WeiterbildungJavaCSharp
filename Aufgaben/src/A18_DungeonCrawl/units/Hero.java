@@ -9,23 +9,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Hero extends Unit{
-    private String name;
-    private Archetype archetype;
-    private Race race;
-    private Weapon weapon;
-    private List<Item> items = new ArrayList<>();;
-    private Integer dmgBonus;
 
     public Hero(String name, Archetype archetype, Race race, Weapon weapon, List<Item> items, Integer dmgBonus) {
-        super(name, archetype, race, weapon, items, dmgBonus);
+        super(name, archetype, race, weapon, items, dmgBonus, 100.0);
     }
 
     public Hero(String name, Archetype archetype, Race race, Weapon weapon, Item item, Integer dmgBonus) {
-        super(name, archetype, race, weapon, item, dmgBonus);
+        super(name, archetype, race, weapon, item, dmgBonus,100.0);
     }
 
     @Override
-    public Double dealDamge() {
-       return weapon.getDmg()*archetype.getDmgMulti(weapon)*2+dmgBonus;
+    public double calcDamage() {
+        return getWeapon().getDmg() * getArchetype().getDmgMulti(getWeapon()) * 2 + getDmgBonus();
     }
 }
