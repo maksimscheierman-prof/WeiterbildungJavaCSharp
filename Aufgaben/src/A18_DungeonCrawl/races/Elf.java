@@ -1,22 +1,32 @@
 package A18_DungeonCrawl.races;
 
-import A18_DungeonCrawl.enums.AttributeType;
-import A18_DungeonCrawl.items.effects.Effect;
-import A18_DungeonCrawl.items.effects.PassiveEffect;
+import A18_DungeonCrawl.units.Unit;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Elf extends Race{
-    private List<Effect> effects = new ArrayList<>();
-
-
-    public List<Effect> getEffects() {
-        return effects;
-    }
+    private boolean dodgeReady = true;
 
     @Override
-    protected void initEffects() {
-        effects.add(new PassiveEffect(AttributeType.DEXTERITY.getDisplayName(), 2));
+    public void useAbility(Unit self, Unit opponent) {
+        if (canUseAbility() && dodgeReady) {
+            System.out.println(self.getName() + " nutzt elfische Agilität – weicht der nächsten Attacke aus!");
+            dodgeReady = false;
+            markAbilityUsed();
+
+            // In deiner Kampf-Logik kannst du später prüfen:
+            // if (defender.getRace() instanceof Elf && ((Elf) defender).isDodgeReady()) ...
+        } else {
+            System.out.println("Die Fähigkeit wurde bereits genutzt.");
+        }
     }
+
+    public boolean isDodgeReady() {
+        return dodgeReady;
+    }
+
+    public void resetDodge() {
+        dodgeReady = true;
+        resetAbility();
+    }
+
 }

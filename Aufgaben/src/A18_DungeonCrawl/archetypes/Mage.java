@@ -3,18 +3,12 @@ package A18_DungeonCrawl.archetypes;
 import A18_DungeonCrawl.weapons.Weapon;
 
 public class Mage extends Archetype {
-    private Double Lifepoints = 8.0;
-    private Integer Strength = 1;
-    private Integer Intelligence = 3;
-    private Integer Dexterity = 1;
+    private Double bonusLifepoints = 8.0;
+    private Double dmgMulti;
 
-
-    public Mage(Double lifepoints, Integer strength, Integer intelligence, Integer dexterity) {
-        super(lifepoints, strength, intelligence, dexterity);
-    }
 
     @Override
-    public Double dealDamge(Weapon weapon) {
+    public Double getDmgMulti(Weapon weapon) {
         Double bonus = 1.0;
         switch (weapon.getType()) {
             case "Melee":
@@ -26,6 +20,6 @@ public class Mage extends Archetype {
             case "Staff":
                 bonus = 1.5;
         }
-        return weapon.getDmg()*bonus;
+        return bonus;
     }
 }

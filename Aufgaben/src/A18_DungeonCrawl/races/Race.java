@@ -1,21 +1,36 @@
 package A18_DungeonCrawl.races;
 
-import A18_DungeonCrawl.items.effects.Effect;
+import A18_DungeonCrawl.units.Unit;
 
 import java.util.List;
 
 public abstract class Race {
-    protected List<Effect> effects;
 
-    public Race() {
-        initEffects();
+    private boolean abilityUsed = false;
+
+    /**
+     * Jede Rasse implementiert ihre eigene Spezialfähigkeit.
+     */
+    public abstract void useAbility(Unit self, Unit opponent);
+
+    /**
+     * Prüft, ob die Fähigkeit in diesem Kampf schon genutzt wurde.
+     */
+    public boolean canUseAbility() {
+        return !abilityUsed;
     }
 
-    protected abstract void initEffects();
+    /**
+     * Setzt den Zustand, dass die Fähigkeit benutzt wurde.
+     */
+    protected void markAbilityUsed() {
+        this.abilityUsed = true;
+    }
 
-    public void useAbility(){}
-
-    public List<Effect> getEffects() {
-        return effects;
+    /**
+     * Setzt den Zustand am Anfang eines neuen Kampfes zurück.
+     */
+    public void resetAbility() {
+        this.abilityUsed = false;
     }
 }

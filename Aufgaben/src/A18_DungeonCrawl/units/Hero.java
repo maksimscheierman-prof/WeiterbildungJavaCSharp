@@ -9,6 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Hero extends Unit{
+    private String name;
+    private Archetype archetype;
+    private Race race;
+    private Weapon weapon;
+    private List<Item> items = new ArrayList<>();;
+    private Integer dmgBonus;
 
     public Hero(String name, Archetype archetype, Race race, Weapon weapon, List<Item> items, Integer dmgBonus) {
         super(name, archetype, race, weapon, items, dmgBonus);
@@ -20,6 +26,6 @@ public class Hero extends Unit{
 
     @Override
     public Double dealDamge() {
-       return 0.0;
+       return weapon.getDmg()*archetype.getDmgMulti(weapon)*2+dmgBonus;
     }
 }

@@ -1,27 +1,37 @@
 package A18_DungeonCrawl.races;
 
-import A18_DungeonCrawl.enums.AttributeType;
-import A18_DungeonCrawl.items.effects.Effect;
-import A18_DungeonCrawl.items.effects.PassiveEffect;
-
-import java.util.ArrayList;
-import java.util.List;
+import A18_DungeonCrawl.units.Unit;
 
 public class Human extends Race{
-    private List<Effect> effects = new ArrayList<>();
-
-
-    public List<Effect> getEffects() {
-        return effects;
-    }
+    private boolean shieldActive = false;
 
     @Override
-    protected void initEffects() {
-        effects.add(new PassiveEffect(AttributeType.INTELLIGENCE.getDisplayName(), 2));
+    public void useAbility(Unit self, Unit opponent) {
+        if (canUseAbility() && !shieldActive) {
+            shieldActive = true;
+            markAbilityUsed();
+            System.out.println(self.getName() + " erschafft ein Energieschild!");
+        } else {
+            System.out.println("Energieschild wurde bereits genutzt.");
+        }
     }
 
-    @Override
-    public void useAbility() {
-        super.useAbility();
+    public boolean isShieldActive() {
+        return shieldActive;
+    }
+
+    public void onAttack(Unit self, Unit attacker, double dmg) {
+        if (shieldActive) {
+            System.out.println(self.getName() + " blockt und reflektiert den Angriff!");
+            attacker.takeDamage(dmg); // reflektiert den Schaden
+            shieldActive = false; // Schild verbraucht
+        } else {
+            self.takeDamage(dmg);
+        }
+    }
+
+    public void resetShield() {
+        shieldActive = false;
+        resetAbility();
     }
 }
