@@ -5,8 +5,10 @@ import java.io.IOException;
 
 public class ThrowsExample {
 
-    public void createFile() throws IOException{
-        File file = new File("AbC");
+    private File file;
+
+    public void createFile() throws IOException {
+        file = new File("AbC");
         file.createNewFile();       //fordert mich auf, die Exception zu behandeln
 
         //Fall 1: Ich möchte die Exception direkt behandeln:
@@ -18,17 +20,24 @@ public class ThrowsExample {
 
         //Fall 2: Der Aufrufer soll die Fehlerbehandlung übernehmen. Dann schreibe ich das im Methodenkopf
     }
+
+    public void writeToFile(){
+        throw new RuntimeException("Die File existiert nicht");
+    }
 }
 
-class FileTester{
+class FileTester {
     public static void main(String[] args) {
         ThrowsExample example = new ThrowsExample();
         //example.createFile(); //Aufforderung: Behandle mich!! Oder: wieder weiterschmeißen
 
-        try{
+        example.writeToFile();
+        try {
             example.createFile();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+
+
     }
 }
