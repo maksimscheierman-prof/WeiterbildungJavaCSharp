@@ -1,5 +1,6 @@
 package T26_Predicate;
 
+import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
 /**
@@ -20,5 +21,9 @@ import java.util.function.Predicate;
 
 public class PredicateTest {
     public static void main(String[] args) {
+
+        BiPredicate<String,Integer> lengthMatches = (str,i) -> str!=null && i!=null && str.length()==i;
+        System.out.println(lengthMatches.test("ABC",3)); // false
+        System.out.println(lengthMatches.test("aBA4",3));
     }
 }
