@@ -1,0 +1,84 @@
+@startuml
+title Schiffe versenken – Klassendiagramm
+
+package "model" {
+    class Ship {
+        - name : String
+        - size : int
+        - coordinates : List<Coordinate>
+        - hits : int
+        + Ship(name : String, size : int)
+        + place(start : Coordinate, direction : Direction)
+        + isSunk() : boolean
+        + registerHit()
+    }
+
+    class Coordinate {
+        - x : int
+        - y : int
+        + Coordinate(x : int, y : int)
+        + getX() : int
+        + getY() : int
+        + equals(obj : Object) : boolean
+        + hashCode() : int
+    }
+
+    enum Direction {
+        HORIZONTAL
+        VERTICAL
+    }
+
+    class Board {
+        - size : int
+        - ships : List<Ship>
+        - shots : List<Coordinate>
+        + Board(size : int)
+        + placeShip(ship : Ship, start : Coordinate, direction : Direction) : boolean
+        + receiveShot(coord : Coordinate) : String
+        + allShipsSunk() : boolean
+        + isValidPlacement(ship : Ship, start : Coordinate, direction : Direction) : boolean
+    }
+}
+
+package "player" {
+    abstract class Player {
+        - name : String
+        - board : Board
+        + Player(name : String, board : Board)
+        + getBoard() : Board
+        + placeShips()
+        + shootAt(enemy : Player, coord : Coordinate) : String
+    }
+
+    class HumanPlayer extends Player {
+        + HumanPlayer(name : String, board : Board)
+        + placeShips()
+        + chooseTarget() : Coordinate
+    }
+
+    class AIPlayer extends Player {
+        + AIPlayer(name : String, board : Board)
+        + placeShips()
+        + chooseTarget() : Coordinate
+    }
+}
+
+package "game" {
+    class Game {
+        - player1 : Player
+        - player2 : Player
+        - currentPlayer : Player
+        + Game(player1 : Player, player2 : Player)
+        + start()
+        + switchTurns()
+        + checkVictory() : boolean
+    }
+}
+
+' --- Beziehungen ---
+Player --> Board : uses
+Board "1" o-- "*" Ship
+Ship "1" o-- "*" Coordinate
+Game --> Player
+Ship --> Direction
+@enduml
