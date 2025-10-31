@@ -1,0 +1,23 @@
+Warum Array und keine ArrayList?
+→ Die Anzahl der Messwerte (24 Stunden) ist fest. Es wird keine dynamische Änderung der Größe benötigt.
+
+Wie viele Messwerte werden gespeichert?
+→ Genau 24 Werte, da pro Stunde ein Messwert aufgezeichnet wird.
+
+Wichtige Unterschiede:
+
+Merkmal	        Array	                ArrayList
+Größe	        Fix	                    Dynamisch veränderbar
+Datentyp	    primitive und Objekte	nur Objekte
+Geschwindigkeit	schneller	            etwas langsamer
+Speicherbedarf	gering	                höher
+Syntax	        array[i]	            arrayList.get(i)
+
+Wann Arrays verwenden?
+→ Wenn die Datenmenge feststeht und maximale Performance wichtig ist.
+
+Wann ArrayList verwenden?
+→ Wenn die Größe variabel ist oder Elemente häufig hinzugefügt/entfernt werden.
+
+Beispiel für ArrayList:
+→ Speicherung aller Besucher eines Tages, da sich deren Anzahl ständig ändert.
