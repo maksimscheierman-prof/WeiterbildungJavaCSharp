@@ -87,7 +87,7 @@ public class TextAnalyzerApp {
     private static void printMenu() {
         System.out.println("""
                 ==============================
-                TEXT-ANALYZER – Pflichtaufgabe
+                TEXT-ANALYZER 
                 ==============================
                 1) Text in die Konsole eingeben
                 2) .txt-Datei einlesen
