@@ -1,5 +1,7 @@
 package T33_StringBuilder;
 
+import java.time.LocalDate;
+
 public class init {
     public static void main(String[] args) {
         StringBuilder b = new StringBuilder("Hallo");
@@ -21,6 +23,10 @@ public class init {
         d.append("Abc");
         System.out.println(c);
         System.out.println(d);*/
+        StringBuilder sb = new StringBuilder(5);
+        System.out.println(sb.length());
+        String s = "";
+
     }
 
 }
