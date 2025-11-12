@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DateTimeUtils</title>
+  <style>
+  @font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body .octicon {
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-bottom;
+}
+
+.markdown-body .anchor {
+  float: left;
+  line-height: 1;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #1b1f23;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #24292e;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.markdown-body .pl-c {
+  color: #6a737d;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #005cc5;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #6f42c1;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #24292e;
+}
+
+.markdown-body .pl-ent {
+  color: #22863a;
+}
+
+.markdown-body .pl-k {
+  color: #d73a49;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #032f62;
+}
+
+.markdown-body .pl-smw,
+.markdown-body .pl-v {
+  color: #e36209;
+}
+
+.markdown-body .pl-bu {
+  color: #b31d28;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b31d28;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2 {
+  background-color: #d73a49;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2:before {
+  content: "^M";
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #22863a;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ml {
+  color: #735c0f;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #005cc5;
+  font-weight: 700;
+}
+
+.markdown-body .pl-mi {
+  color: #24292e;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #24292e;
+  font-weight: 700;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffeef0;
+  color: #b31d28;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #f0fff4;
+  color: #22863a;
+}
+
+.markdown-body .pl-mc {
+  background-color: #ffebda;
+  color: #e36209;
+}
+
+.markdown-body .pl-mi2 {
+  background-color: #005cc5;
+  color: #f6f8fa;
+}
+
+.markdown-body .pl-mdr {
+  color: #6f42c1;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ba {
+  color: #586069;
+}
+
+.markdown-body .pl-sg {
+  color: #959da5;
+}
+
+.markdown-body .pl-corl {
+  color: #032f62;
+  text-decoration: underline;
+}
+
+.markdown-body details {
+  display: block;
+}
+
+.markdown-body summary {
+  display: list-item;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+.markdown-body img {
+  border-style: none;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body input {
+  overflow: visible;
+}
+
+.markdown-body [type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body * {
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body hr {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dfe2e5;
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.markdown-body hr:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body hr:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body details summary {
+  cursor: pointer;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body h1 {
+  font-size: 32px;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  font-weight: 600;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+}
+
+.markdown-body h3,
+.markdown-body h4 {
+  font-weight: 600;
+}
+
+.markdown-body h4 {
+  font-size: 16px;
+}
+
+.markdown-body h5 {
+  font-size: 14px;
+}
+
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+}
+
+.markdown-body h6 {
+  font-size: 12px;
+}
+
+.markdown-body p {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ol ol ol,
+.markdown-body ol ul ol,
+.markdown-body ul ol ol,
+.markdown-body ul ul ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body input::-webkit-inner-spin-button,
+.markdown-body input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.markdown-body .border {
+  border: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .border-0 {
+  border: 0!important;
+}
+
+.markdown-body .border-bottom {
+  border-bottom: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .rounded-1 {
+  border-radius: 3px!important;
+}
+
+.markdown-body .bg-white {
+  background-color: #fff!important;
+}
+
+.markdown-body .bg-gray-light {
+  background-color: #fafbfc!important;
+}
+
+.markdown-body .text-gray-light {
+  color: #6a737d!important;
+}
+
+.markdown-body .mb-0 {
+  margin-bottom: 0!important;
+}
+
+.markdown-body .my-2 {
+  margin-bottom: 8px!important;
+  margin-top: 8px!important;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .py-0 {
+  padding-bottom: 0!important;
+  padding-top: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .py-2 {
+  padding-bottom: 8px!important;
+  padding-top: 8px!important;
+}
+
+.markdown-body .pl-3,
+.markdown-body .px-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .px-3 {
+  padding-right: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .f6 {
+  font-size: 12px!important;
+}
+
+.markdown-body .lh-condensed {
+  line-height: 1.25!important;
+}
+
+.markdown-body .text-bold {
+  font-weight: 600!important;
+}
+
+.markdown-body:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body>:first-child {
+  margin-top: 0!important;
+}
+
+.markdown-body>:last-child {
+  margin-bottom: 0!important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body blockquote,
+.markdown-body dl,
+.markdown-body ol,
+.markdown-body p,
+.markdown-body pre,
+.markdown-body table,
+.markdown-body ul {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.markdown-body hr {
+  background-color: #e1e4e8;
+  border: 0;
+  height: .25em;
+  margin: 24px 0;
+  padding: 0;
+}
+
+.markdown-body blockquote {
+  border-left: .25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+  color: #444d56;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: .3em;
+}
+
+.markdown-body h2 {
+  font-size: 1.5em;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-size: .875em;
+}
+
+.markdown-body h6 {
+  color: #6a737d;
+  font-size: .85em;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  padding-left: 2em;
+}
+
+.markdown-body ol ol,
+.markdown-body ol ul,
+.markdown-body ul ol,
+.markdown-body ul ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body li {
+  word-wrap: break-all;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: .25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 16px;
+  padding: 0;
+}
+
+.markdown-body dl dd {
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+
+.markdown-body table {
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table td,
+.markdown-body table th {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body img {
+  background-color: #fff;
+  box-sizing: content-box;
+  max-width: 100%;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body code {
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  padding: .2em .4em;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre>code {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  word-break: normal;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  border: 0;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  max-width: auto;
+  overflow: visible;
+  padding: 0;
+  word-wrap: normal;
+}
+
+.markdown-body .commit-tease-sha {
+  color: #444d56;
+  display: inline-block;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 90%;
+}
+
+.markdown-body .blob-wrapper {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.markdown-body .blob-wrapper-embedded {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.markdown-body .blob-num {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  color: rgba(27,31,35,.3);
+  cursor: pointer;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  line-height: 20px;
+  min-width: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.markdown-body .blob-num:hover {
+  color: rgba(27,31,35,.6);
+}
+
+.markdown-body .blob-num:before {
+  content: attr(data-line-number);
+}
+
+.markdown-body .blob-code {
+  line-height: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  vertical-align: top;
+}
+
+.markdown-body .blob-code-inner {
+  color: #24292e;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  overflow: visible;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.markdown-body .pl-token.active,
+.markdown-body .pl-token:hover {
+  background: #ffea7f;
+  cursor: pointer;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+  color: #444d56;
+  display: inline-block;
+  font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body :checked+.radio-label {
+  border-color: #0366d6;
+  position: relative;
+  z-index: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="1"] {
+  -moz-tab-size: 1;
+  tab-size: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="2"] {
+  -moz-tab-size: 2;
+  tab-size: 2;
+}
+
+.markdown-body .tab-size[data-tab-size="3"] {
+  -moz-tab-size: 3;
+  tab-size: 3;
+}
+
+.markdown-body .tab-size[data-tab-size="4"] {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+.markdown-body .tab-size[data-tab-size="5"] {
+  -moz-tab-size: 5;
+  tab-size: 5;
+}
+
+.markdown-body .tab-size[data-tab-size="6"] {
+  -moz-tab-size: 6;
+  tab-size: 6;
+}
+
+.markdown-body .tab-size[data-tab-size="7"] {
+  -moz-tab-size: 7;
+  tab-size: 7;
+}
+
+.markdown-body .tab-size[data-tab-size="8"] {
+  -moz-tab-size: 8;
+  tab-size: 8;
+}
+
+.markdown-body .tab-size[data-tab-size="9"] {
+  -moz-tab-size: 9;
+  tab-size: 9;
+}
+
+.markdown-body .tab-size[data-tab-size="10"] {
+  -moz-tab-size: 10;
+  tab-size: 10;
+}
+
+.markdown-body .tab-size[data-tab-size="11"] {
+  -moz-tab-size: 11;
+  tab-size: 11;
+}
+
+.markdown-body .tab-size[data-tab-size="12"] {
+  -moz-tab-size: 12;
+  tab-size: 12;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 .2em .25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body hr {
+  border-bottom-color: #eee;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .pl-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .pl-7 {
+  padding-left: 48px!important;
+}
+
+.markdown-body .pl-8 {
+  padding-left: 64px!important;
+}
+
+.markdown-body .pl-9 {
+  padding-left: 80px!important;
+}
+
+.markdown-body .pl-10 {
+  padding-left: 96px!important;
+}
+
+.markdown-body .pl-11 {
+  padding-left: 112px!important;
+}
+
+.markdown-body .pl-12 {
+  padding-left: 128px!important;
+}
+
+  </style>
+  <style>
+  /**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #9a6e3a;
+	/* This background color was intended by the author of this theme. */
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function,
+.token.class-name {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+  </style>
+  <style>
+  
+  </style>
+  <style>
+    .markdown-body {
+      font-family: -apple-system,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+
+    @media not print {
+      .markdown-body {
+        padding: 45px;
+      }
+
+      @media (max-width: 767px) {
+        .markdown-body {
+          padding: 15px;
+        }
+      }
+    }
+
+    .hf-container {
+      color: #24292e;
+      line-height: 1.3;
+    }
+
+    .markdown-body .highlight pre,
+    .markdown-body pre {
+      white-space: pre-wrap;
+    }
+    .markdown-body table {
+      display: table;
+    }
+    .markdown-body img[data-align="center"] {
+      display: block;
+      margin: 0 auto;
+    }
+    .markdown-body img[data-align="right"] {
+      display: block;
+      margin: 0 0 0 auto;
+    }
+    .markdown-body li.task-list-item {
+      list-style-type: none;
+    }
+    .markdown-body li > [type=checkbox] {
+      margin: 0 0 0 -1.3em;
+    }
+    .markdown-body input[type="checkbox"] ~ p {
+      margin-top: 0;
+      display: inline-block;
+    }
+    .markdown-body ol ol,
+    .markdown-body ul ol {
+      list-style-type: decimal;
+    }
+    .markdown-body ol ol ol,
+    .markdown-body ol ul ol,
+    .markdown-body ul ol ol,
+    .markdown-body ul ul ol {
+      list-style-type: decimal;
+    }
+  </style>
+  <style>.markdown-body a.footnote-ref {
+  text-decoration: none;
+}
+
+.footnotes {
+  font-size: .85em;
+  opacity: .8;
+}
+
+.footnotes li[role="doc-endnote"] {
+  position: relative;
+}
+
+.footnotes .footnote-back {
+  position: absolute;
+  font-family: initial;
+  top: .2em;
+  right: 1em;
+  text-decoration: none;
+}
+
+.inline-math.invalid,
+.multiple-math.invalid {
+  color: rgb(255, 105, 105);
+}
+
+.toc-container {
+  width: 100%;
+}
+
+.toc-container .toc-title {
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+
+.toc-container li,
+.toc-container ul,
+.toc-container ul li {
+  list-style: none !important;
+}
+
+.toc-container > ul {
+  padding-left: 0;
+}
+
+.toc-container ul li span {
+  display : flex;
+}
+
+.toc-container ul li span a {
+  color: inherit;
+  text-decoration: none;
+}
+.toc-container ul li span a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.toc-container ul li span span.dots {
+  flex: 1;
+  height: 0.65em;
+  margin: 0 10px;
+  border-bottom: 2px dotted black;
+}
+</style>
+  
+  
+</head>
+<body>
+  <article class="markdown-body"><h2 class="atx" id="localdatetime">LocalDateTime</h2>
+<hr>
+<p><strong>Beschreibung:</strong> 
+Stellt Datum und Uhrzeit ohne Zeitzone dar, z. B. “2025-11-10T13:45”.</p>
+<p><strong>Erstellen &amp; Nutzen:</strong></p>
+<ul>
+<li><p><strong>Statische Methoden:</strong></p>
+<ul>
+<li><code>LocalDateTime.now()</code>, <code>LocalDateTime.of(...)</code>, <code>LocalDateTime.parse(...)</code> sind <strong>statische Methoden</strong> zur Erzeugung von Objekten.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="f3fc6714-d913-4b0f-8f48-932f796dbdce" src="file:///C:/Users/taeOh/Pictures/Typedown/f3fc6714-d913-4b0f-8f48-932f796dbdce.png"></p>
+<pre><code class="fenced-code-block language-java"><span class="token class-name">LocalDateTime</span> now <span class="token operator">=</span> <span class="token class-name">LocalDateTime</span><span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// aktueller Zeitpunkt</span>
+<span class="token class-name">LocalDateTime</span> custom <span class="token operator">=</span> <span class="token class-name">LocalDateTime</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">2025</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 15.02.2025, 14:30</span>
+<span class="token class-name">LocalDate</span> date <span class="token operator">=</span> <span class="token class-name">LocalDate</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">2025</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">LocalTime</span> time <span class="token operator">=</span> <span class="token class-name">LocalTime</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">LocalDateTime</span> combined <span class="token operator">=</span> <span class="token class-name">LocalDateTime</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>date<span class="token punctuation">,</span> time<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Kombiniert Datum &amp; Zeit</span>
+
+<span class="token comment">// Verschieben:</span>
+<span class="token class-name">LocalDateTime</span> shifted <span class="token operator">=</span> custom<span class="token punctuation">.</span><span class="token function">plusDays</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">plusHours</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Einzelteile extrahieren:</span>
+<span class="token keyword">int</span> year <span class="token operator">=</span> custom<span class="token punctuation">.</span><span class="token function">getYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> minute <span class="token operator">=</span> custom<span class="token punctuation">.</span><span class="token function">getMinute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<ul>
+<li><p><strong>Immutability:</strong></p>
+<ul>
+<li><code>LocalDateTime</code> ist <strong>immutable</strong>. Methoden wie <code>plusDays()</code>, <code>minusHours()</code> erzeugen immer ein neues Objekt, der ursprüngliche Wert bleibt unverändert.</li>
+</ul>
+</li>
+<li><p><strong>Manipulation:</strong></p>
+<ul>
+<li><p>Datums- und Zeitänderungen erfolgen durch Methoden, die neue Instanzen mit modifizierten Werten zurückgeben:</p>
+</li>
+<li><pre><code class="fenced-code-block language-java"><span class="token class-name">LocalDateTime</span> dt <span class="token operator">=</span> <span class="token class-name">LocalDateTime</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">2025</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token class-name">LocalDateTime</span> shifted <span class="token operator">=</span> dt<span class="token punctuation">.</span><span class="token function">plusDays</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>Das Originalobjekt <code>dt</code> bleibt unverändert.</p>
+<p></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Alt vs Neu:</strong> 
+Früher wurde meist <code>java.util.Date</code> oder <code>Calendar</code> verwendet – beide sind weniger intuitiv, nicht threadsicher und schwer formatierbar. Die neuen Klassen sind immutable, klar strukturiert und einfacher zu bedienen.</p>
+<p></p>
+<p><strong>Typische Exceptions:</strong></p>
+<ul>
+<li><p><code>DateTimeException</code>: Tritt auf bei ungültigen Datums-/Zeitwerten, z. B. Monat=13, Stunde=25 oder Datum vor 1 n.Chr.</p>
+</li>
+<li><p><code>NullPointerException</code>: Wenn z. B. ein <code>null</code> LocalDate oder LocalTime beim Kombinieren übergeben wird.</p>
+</li>
+<li><p><code>DateTimeParseException</code>: Beim Parsen von Strings mit falschem Format durch <code>LocalDateTime.parse(...)</code>.</p>
+</li>
+</ul>
+<hr>
+<h2 class="atx" id="localdate">LocalDate</h2>
+<hr>
+<p><strong>Beschreibung:</strong> 
+Repräsentiert ein Datum ohne Uhrzeit (z. B. “2025-11-11”).</p>
+<p><strong>Erstellen &amp; Nutzen:</strong></p>
+<ul>
+<li><p><strong>Statische Methoden:</strong></p>
+<ul>
+<li>Erzeugung über <code>LocalDate.now()</code>, <code>LocalDate.of(...)</code>, <code>LocalDate.parse(...)</code>.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="fenced-code-block language-java"><span class="token class-name">LocalDate</span> heute <span class="token operator">=</span> <span class="token class-name">LocalDate</span><span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">LocalDate</span> geburtstag <span class="token operator">=</span> <span class="token class-name">LocalDate</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">1990</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">boolean</span> gleich <span class="token operator">=</span> heute<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>geburtstag<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">boolean</span> nachher <span class="token operator">=</span> heute<span class="token punctuation">.</span><span class="token function">isAfter</span><span class="token punctuation">(</span>geburtstag<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">boolean</span> vorher <span class="token operator">=</span> heute<span class="token punctuation">.</span><span class="token function">isBefore</span><span class="token punctuation">(</span>geburtstag<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Hinzufügen/Subtrahieren:</span>
+<span class="token class-name">LocalDate</span> zukunft <span class="token operator">=</span> heute<span class="token punctuation">.</span><span class="token function">plusYears</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">DayOfWeek</span> wochentag <span class="token operator">=</span> heute<span class="token punctuation">.</span><span class="token function">getDayOfWeek</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">LocalDate</span> date <span class="token operator">=</span> <span class="token class-name">LocalDate</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">2025</span><span class="token punctuation">,</span> <span class="token class-name">Month</span><span class="token punctuation">.</span>DECEMBER<span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Ausgabe: 2025-12-25</span>
+<span class="token class-name">LocalDate</span> date2 <span class="token operator">=</span> <span class="token class-name">LocalDate</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">2025</span><span class="token punctuation">,</span> <span class="token class-name">Month</span><span class="token punctuation">.</span>DECEMBER<span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//Exception</span>
+</code></pre>
+<ul>
+<li><p><strong>Immutable:</strong></p>
+<ul>
+<li>Änderungen wie <code>plusDays()</code> oder <code>minusMonths()</code> liefern neue Objekte zurück.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>Manipulation:</strong></p>
+<ul>
+<li><code>LocalDate</code> kann durch hinzufügen oder subtrahieren modifiziert werden, z. B.:</li>
+</ul>
+</li>
+</ul>
+<pre><code class="fenced-code-block language-java"><span class="token class-name">LocalDate</span> today <span class="token operator">=</span> <span class="token class-name">LocalDate</span><span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token class-name">LocalDate</span> nextWeek <span class="token operator">=</span> today<span class="token punctuation">.</span><span class="token function">plusWeeks</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p></p>
+<p><strong>Alt vs Neu:</strong> 
+Mit <code>Date</code>/<code>Calendar</code> musste man viel umständlicher parsen, rechnen und Wochentage als Zahl (0=Sonntag!) herausfinden – jetzt gibt es klare, selbstbeschreibende Methoden.</p>
+<p></p>
+<p><strong>Typische Exceptions:</strong></p>
+<ul>
+<li><p><code>DateTimeException</code>: Ungültige Werte wie Monat=0 oder Tag=32 führen zu Fehlern.</p>
+</li>
+<li><p><code>DateTimeParseException</code>: Falsches Format beim Parsen aus String.</p>
+</li>
+<li><p><code>UnsupportedTemporalTypeException</code>: Beim Versuch, nicht unterstützte Felder (z.B. Stunden bei LocalDate) abzufragen.</p>
+</li>
+</ul>
+<p>​</p>
+<hr>
+<h2 class="atx" id="localtime">LocalTime</h2>
+<hr>
+<p><strong>Beschreibung:</strong> 
+Nur Uhrzeit ohne Datum und Zeitzone, etwa “13:45”.</p>
+<p><strong>Erstellen &amp; Nutzen:</strong></p>
+<pre><code class="fenced-code-block language-java"><span class="token class-name">LocalTime</span> jetzt <span class="token operator">=</span> <span class="token class-name">LocalTime</span><span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">LocalTime</span> festenZeit <span class="token operator">=</span> <span class="token class-name">LocalTime</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 9:15</span>
+<span class="token class-name">LocalTime</span> spaeter <span class="token operator">=</span> festenZeit<span class="token punctuation">.</span><span class="token function">plusMinutes</span><span class="token punctuation">(</span><span class="token number">90</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 10:45</span>
+
+<span class="token comment">// Vergleich:</span>
+<span class="token keyword">boolean</span> vorher <span class="token operator">=</span> festenZeit<span class="token punctuation">.</span><span class="token function">isBefore</span><span class="token punctuation">(</span>spaeter<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><strong>Alt vs Neu:</strong> 
+Früher wurde meist mit <code>Date</code> gerechnet und mit Formatstrings manipuliert. Jetzt können gezielt Zeitangaben ohne Datum bearbeitet werden.</p>
+<p></p>
+<p><strong>Typische Exceptions:</strong></p>
+<ul>
+<li><p><code>DateTimeException</code>: Ungültige Uhrzeitwerte, z. B. Minute=61.</p>
+</li>
+<li><p><code>DateTimeParseException</code>: Falscher Zeitformat-String beim Parsen.</p>
+</li>
+<li><p><code>UnsupportedTemporalTypeException</code>: Wenn man z.B. Tagesinformationen anfordert.</p>
+<hr>
+<h2 class="atx" id="manipulieren-durch-methoden">Manipulieren durch Methoden</h2>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>LocalDate</td>
+<td>LocalTime</td>
+<td>LocalDateTime</td>
+</tr>
+<tr>
+<td>plusYears/minusYears</td>
+<td><img alt="be9ed5c4-7b30-4445-b470-ba44edd18ca3" src="file:///C:/Users/taeOh/Pictures/Typedown/be9ed5c4-7b30-4445-b470-ba44edd18ca3.png"></td>
+<td>X</td>
+<td><img alt="85e5b288-4189-483a-bdc4-9bcf92e36542" src="file:///C:/Users/taeOh/Pictures/Typedown/85e5b288-4189-483a-bdc4-9bcf92e36542.png"></td>
+</tr>
+<tr>
+<td>plusMonths/minusMonths</td>
+<td><img alt="2d907069-9b9c-4255-a6c4-164e8481983b" src="file:///C:/Users/taeOh/Pictures/Typedown/2d907069-9b9c-4255-a6c4-164e8481983b.png"></td>
+<td>X</td>
+<td><img alt="8d2dac37-b5f0-4718-8d5c-bd60003b67e0" src="file:///C:/Users/taeOh/Pictures/Typedown/8d2dac37-b5f0-4718-8d5c-bd60003b67e0.png"></td>
+</tr>
+<tr>
+<td>plusWeeks/minusWeeks</td>
+<td><img alt="a3ab8392-0483-47e5-a0d1-548b31c40bc3" src="file:///C:/Users/taeOh/Pictures/Typedown/a3ab8392-0483-47e5-a0d1-548b31c40bc3.png"></td>
+<td>X</td>
+<td><img alt="dc51bf18-8880-4840-b12e-bb8309b6dd6c" src="file:///C:/Users/taeOh/Pictures/Typedown/dc51bf18-8880-4840-b12e-bb8309b6dd6c.png"></td>
+</tr>
+<tr>
+<td>plusDays/minusDays</td>
+<td><img alt="e6962301-2949-4de8-a581-3aac8e74bd68" src="file:///C:/Users/taeOh/Pictures/Typedown/e6962301-2949-4de8-a581-3aac8e74bd68.png"></td>
+<td>X</td>
+<td><img alt="82343d7c-302f-47c4-8e2f-8267d54f51b3" src="file:///C:/Users/taeOh/Pictures/Typedown/82343d7c-302f-47c4-8e2f-8267d54f51b3.png"></td>
+</tr>
+<tr>
+<td>plusHours/minusHours</td>
+<td>X</td>
+<td><img alt="1556b253-cbff-4d6b-83ca-dd528d5273bf" src="file:///C:/Users/taeOh/Pictures/Typedown/1556b253-cbff-4d6b-83ca-dd528d5273bf.png"></td>
+<td><img alt="3404593a-e518-4559-aa64-82d673d89d9d" src="file:///C:/Users/taeOh/Pictures/Typedown/3404593a-e518-4559-aa64-82d673d89d9d.png"></td>
+</tr>
+<tr>
+<td>plusMinutes/minusMinutes</td>
+<td>X</td>
+<td><img alt="cf8225ad-a371-4f79-b297-47bbb4f1fcbd" src="file:///C:/Users/taeOh/Pictures/Typedown/cf8225ad-a371-4f79-b297-47bbb4f1fcbd.png"></td>
+<td><img alt="3baa4a51-805f-49ee-b8f2-eeb3977f7de2" src="file:///C:/Users/taeOh/Pictures/Typedown/3baa4a51-805f-49ee-b8f2-eeb3977f7de2.png"></td>
+</tr>
+<tr>
+<td>plusSeconds/minusSeconds</td>
+<td>X</td>
+<td><img alt="7e8deaaa-8b96-4efc-9b9c-06ae81437522" src="file:///C:/Users/taeOh/Pictures/Typedown/7e8deaaa-8b96-4efc-9b9c-06ae81437522.png"></td>
+<td><img alt="18942e85-6068-45da-b700-78f5fd1f6fd3" src="file:///C:/Users/taeOh/Pictures/Typedown/18942e85-6068-45da-b700-78f5fd1f6fd3.png"></td>
+</tr>
+<tr>
+<td>plusNanos/minusNanos</td>
+<td>X</td>
+<td><img alt="15225fce-29e9-4d81-9a58-64de95e2fb12" src="file:///C:/Users/taeOh/Pictures/Typedown/15225fce-29e9-4d81-9a58-64de95e2fb12.png"></td>
+<td><img alt="6c2a9846-2f5a-4317-8031-db9a9cce9532" src="file:///C:/Users/taeOh/Pictures/Typedown/6c2a9846-2f5a-4317-8031-db9a9cce9532.png"></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 class="atx" id="datetimeformatter">DateTimeFormatter</h2>
+<hr>
+<p><strong>Beschreibung:</strong> 
+Dient dazu, Datum-/Zeitobjekte zu formatieren und zu parsen (String ↔ Objekt).</p>
+<ul>
+<li><p><strong>Statische Fabrikmethoden für Formatierer, z. B.:</strong></p>
+<ul>
+<li><code>DateTimeFormatter.ofPattern(...)</code>, <code>DateTimeFormatter.ISO_LOCAL_DATE</code>, alle <strong>statisch</strong> erzeugt.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Beispiele:</strong></p>
+<pre><code class="fenced-code-block language-java"><span class="token class-name">DateTimeFormatter</span> fmt <span class="token operator">=</span> <span class="token class-name">DateTimeFormatter</span><span class="token punctuation">.</span><span class="token function">ofPattern</span><span class="token punctuation">(</span><span class="token string">"dd.MM.yyyy HH:mm"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> text <span class="token operator">=</span> <span class="token class-name">LocalDateTime</span><span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>fmt<span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// "11.11.2025 09:45"</span>
+<span class="token class-name">LocalDateTime</span> ldt <span class="token operator">=</span> <span class="token class-name">LocalDateTime</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token string">"15.02.2025 14:30"</span><span class="token punctuation">,</span> fmt<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Es gibt vordefinierte Formate (ISO, BASIC), individuelle Muster und die Formatter sind <em>threadsicher</em> (anders als <code>SimpleDateFormat</code>).</p>
+<p></p>
+<p><strong>ISO_DATE</strong></p>
+<ul>
+<li><p>InternationalerStandard für Datum</p>
+</li>
+<li><p>Zeit darf nicht mitgegeben werden</p>
+<p></p>
+</li>
+</ul>
+<p><strong>ISO_TIME</strong></p>
+<ul>
+<li><p>InternationalerStandard für Zeit</p>
+</li>
+<li><p>Datum darf nicht mitgegeben werden</p>
+<p></p>
+</li>
+</ul>
+<p><strong>ISO_DATE_TIME</strong></p>
+<ul>
+<li><p>Internationaler Standard für Datum und Zeit</p>
+</li>
+<li><p>Zeit und Datum MÜSSEN mitgegeben werden</p>
+<p></p>
+</li>
+</ul>
+<p><strong>Immutable:</strong></p>
+<ul>
+<li>Instanzen sind unveränderlich und threadsicher.</li>
+</ul>
+<p><strong>Verwendung:</strong></p>
+<ul>
+<li>Formatieren und Parsen von Date-/Time-Objekten mit <code>format()</code> und <code>parse()</code>.</li>
+</ul>
+<p><strong>Typische Exceptions:</strong></p>
+<ul>
+<li><p><code>IllegalArgumentException</code>: Beim Erstellen eines Formatters mit ungültigem Muster.</p>
+</li>
+<li><p><code>DateTimeParseException</code>: Wenn das zu parsende Datum/Zeit nicht zum Muster passt.</p>
+<p></p>
+</li>
+</ul>
+<p><img alt="21d977f0-9529-4e41-8273-54f35b8d03a7" src="file:///C:/Users/taeOh/Pictures/Typedown/21d977f0-9529-4e41-8273-54f35b8d03a7.png"></p>
+<p><img alt="c9b7a827-6c6d-49ae-a9ab-572c34217442" src="file:///C:/Users/taeOh/Pictures/Typedown/c9b7a827-6c6d-49ae-a9ab-572c34217442.png"></p>
+<p></p>
+<p><img alt="ca117072-ccfa-4e41-a0c9-438a964096a3" src="file:///C:/Users/taeOh/Pictures/Typedown/ca117072-ccfa-4e41-a0c9-438a964096a3.png"></p>
+<hr>
+<h2 class="atx" id="period">Period</h2>
+<hr>
+<p><strong>Beschreibung:</strong> 
+Period beschreibt den Unterschied (in Jahren, Monaten, Tagen) zwischen zwei Datumswerten.</p>
+<ul>
+<li><p><strong>Statische Erzeugung:</strong></p>
+<ul>
+<li><code>Period.between(...)</code> und <code>Period.of(...)</code> sind statische Fabrikmethoden.</li>
+</ul>
+</li>
+<li><p><strong>Immutable:</strong></p>
+<ul>
+<li>Period-Objekte repräsentieren konstante Zeitspanne (Jahre, Monate, Tage).</li>
+</ul>
+</li>
+<li><p><strong>Manipulation:</strong></p>
+<ul>
+<li>Um Perioden zu verändern, werden neue Instanzen erzeugt.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Beispiel:</strong></p>
+<pre><code class="fenced-code-block language-java"><span class="token class-name">LocalDate</span> geb <span class="token operator">=</span> <span class="token class-name">LocalDate</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">LocalDate</span> heute <span class="token operator">=</span> <span class="token class-name">LocalDate</span><span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Period</span> alter <span class="token operator">=</span> <span class="token class-name">Period</span><span class="token punctuation">.</span><span class="token function">between</span><span class="token punctuation">(</span>geb<span class="token punctuation">,</span> heute<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> jahre <span class="token operator">=</span> alter<span class="token punctuation">.</span><span class="token function">getYears</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// Jahre</span>
+<span class="token keyword">int</span> monate <span class="token operator">=</span> alter<span class="token punctuation">.</span><span class="token function">getMonths</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Monate</span>
+<span class="token keyword">int</span> tage <span class="token operator">=</span> alter<span class="token punctuation">.</span><span class="token function">getDays</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// Tage</span></code></pre>
+<p><strong>Typisch für Alters-, Vertrags-, oder Jubiläumsberechnung</strong>.</p>
+<p>​<strong>Typische Exceptions:</strong></p>
+<ul>
+<li><p>Selten eigene Exceptions, aber <code>NullPointerException</code> bei <code>null</code>-Übergabe.</p>
+</li>
+<li><p><code>DateTimeException</code> bei ungültiger Perioden-Erstellung.</p>
+<p></p>
+</li>
+</ul>
+<p><img alt="2aa0ee28-b52e-43d9-8107-bcb8c2278777" src="file:///C:/Users/taeOh/Pictures/Typedown/2aa0ee28-b52e-43d9-8107-bcb8c2278777.png"></p>
+<hr>
+<h2 class="atx" id="duration">Duration</h2>
+<hr>
+<p><strong>Beschreibung:</strong> 
+Duration misst exakte Zeitspannen (Stunden, Minuten, Sekunden, Millisekunden), vor allem zwischen Instanzen von <code>LocalDateTime</code>, <code>Instant</code>, <code>LocalTime</code>.</p>
+<ul>
+<li><p><strong>Statische Erzeugung:</strong></p>
+<ul>
+<li><code>Duration.between(...)</code>, <code>Duration.ofHours()</code> sind statische Methoden.</li>
+</ul>
+</li>
+<li><p><strong>Immutable:</strong></p>
+<ul>
+<li>Dauer ist unveränderlich; Manipulationen liefern neue Instanzen.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Beispiel:</strong></p>
+<pre><code class="fenced-code-block language-java"><span class="token class-name">LocalDateTime</span> start <span class="token operator">=</span> <span class="token class-name">LocalDateTime</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">2025</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">LocalDateTime</span> ende <span class="token operator">=</span> <span class="token class-name">LocalDateTime</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">2025</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Duration</span> dauer <span class="token operator">=</span> <span class="token class-name">Duration</span><span class="token punctuation">.</span><span class="token function">between</span><span class="token punctuation">(</span>start<span class="token punctuation">,</span> ende<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">long</span> stunden <span class="token operator">=</span> dauer<span class="token punctuation">.</span><span class="token function">toHours</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// z.B. 26h</span></code></pre>
+<p><strong>Typisch für Messungen in Maschinen, Stoppuhr, Laufzeit-Auswertungen usw.</strong></p>
+<p><strong>Typische Exceptions:</strong></p>
+<ul>
+<li><p><code>ArithmeticException</code>: Bei Berechnung von extrem großen Zeitspannen (Overflow).</p>
+</li>
+<li><p><code>NullPointerException</code> bei <code>null</code>-Dates.</p>
+</li>
+<li><p><code>DateTimeException</code> bei ungültigen Eingabewerten.</p>
+</li>
+</ul>
+<hr>
+<h2 class="setext" id="period-vs-duration">Period vs Duration</h2>
+<ul>
+<li><p><strong>Period:</strong> Jahre, Monate, Tage (z. B. Vertragsdauer, Alter, Kalenderabstände)</p>
+</li>
+<li><p><strong>Duration:</strong> Exakte Zeitdifferenz in Stunden, Minuten, Sekunden (z. B. Maschinenlaufzeit, Zeitmessung, digitale Uhren)</p>
+</li>
+<li><p><strong>Beispiel:</strong> Von 1.2.2023 bis 3.3.2025 → Period: 2 Jahre, 1 Monat, 2 Tage. Gleicher Zeitraum in Duration: Z.B. 759 Tage/18216 Stunden.</p>
+</li>
+</ul>
+<hr>
+<h2 class="setext" id="vorteile-der-neuen-api-gegenuber-der-alten-datecalendar">Vorteile der neuen API gegenüber der alten (<code>Date</code>/<code>Calendar</code>)</h2>
+<ul>
+<li><p><strong>Immutable:</strong> sicher, kein ungewolltes Verändern im Hintergrund</p>
+</li>
+<li><p><strong>Übersichtlich:</strong> klare, selbsterklärende Methoden</p>
+</li>
+<li><p><strong>Präzise Typen:</strong> LocalDate, LocalTime usw. verhindern „vermischte“ Angaben</p>
+</li>
+<li><p><strong>Bessere Formatierung:</strong> DateTimeFormatter ist flexibel und threadsicher</p>
+</li>
+<li><p><strong>Einfacheres Berechnen &amp; Vergleichen:</strong> keine Zahlenspiele mehr für Monate, Jahre etc.</p>
+</li>
+<li><p><strong>Klare Trennung:</strong> „Datum“, „Uhrzeit“, „Zeitspanne“ als eigene, passende Klasse</p>
+</li>
+</ul>
+</article>
+  
+</body>
+</html>
