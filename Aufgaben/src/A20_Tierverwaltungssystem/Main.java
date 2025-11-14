@@ -5,6 +5,8 @@ import A20_Tierverwaltungssystem.exceptions.ValidationException;
 import A20_Tierverwaltungssystem.model.*;
 import A20_Tierverwaltungssystem.service.AnimalService;
 
+import java.io.File;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,9 +15,12 @@ public class Main {
 
     public static void main(String[] args) {
         AnimalService svc = new AnimalService();
-        seed(svc);
+        svc.printFilePath();
+        svc.loadFromFile();
 
         while (true) {
+            //Lade alle Vorhandenen Tiere
+
             System.out.println("""
                     \n=== LambdaLand Tierverwaltung ===
                     1) Alle Tiere anzeigen
@@ -61,49 +66,63 @@ public class Main {
         String species = IN.nextLine().trim();
         System.out.print("Name: ");
         String name = IN.nextLine();
-        System.out.print("Alter: ");
-        int age = Integer.parseInt(IN.nextLine());
+        System.out.print("Geburtsdatum (YYYY-MM-DD): ");
+        LocalDate birthDate = LocalDate.parse(IN.nextLine());
 
         Animal a;
         switch (species.toLowerCase()) {
             case "dog" -> {
                 System.out.print("Rasse: ");
-                a = new Dog(id, name, age, IN.nextLine());
+                String breed = IN.nextLine();
+                a = new Dog(id, name, birthDate, breed);
             }
             case "cat" -> {
                 System.out.print("Wohnungskatze? (true/false): ");
-                a = new Cat(id, name, age, Boolean.parseBoolean(IN.nextLine()));
+                boolean indoor = Boolean.parseBoolean(IN.nextLine());
+                a = new Cat(id, name, birthDate, indoor);
             }
             case "parrot" -> {
                 System.out.print("Farbe: ");
-                a = new Parrot(id, name, age, IN.nextLine());
+                String color = IN.nextLine();
+                a = new Parrot(id, name, birthDate, color);
             }
             default -> throw new ValidationException("Unbekannte Art: " + species);
         }
+
         svc.add(a);
         System.out.println("Hinzugefügt: " + a);
     }
 
     private static void editAnimal(AnimalService svc)
             throws ValidationException, AnimalNotFoundException {
+
         System.out.print("ID des Tieres: ");
         long id = Long.parseLong(IN.nextLine());
+
         System.out.print("Neuer Name (leer = unverändert): ");
         String newName = IN.nextLine();
-        System.out.print("Neues Alter (-1 = unverändert): ");
-        int newAge = Integer.parseInt(IN.nextLine());
+
+        System.out.print("Neues Geburtsdatum (YYYY-MM-DD, leer = unverändert): ");
+        String birthInput = IN.nextLine();
 
         svc.update(id, a -> {
             try {
-                if (!newName.isBlank()) a.setName(newName);
-                if (newAge >= 0) a.setAge(newAge);
+                if (!newName.isBlank()) {
+                    a.setName(newName);
+                }
+
+                if (!birthInput.isBlank()) {
+                    a.setBirthDate(LocalDate.parse(birthInput));
+                }
+
             } catch (ValidationException e) {
-                // rethrow als unchecked, um Lambda zu verlassen
-                throw new RuntimeException(e);
+                throw new RuntimeException(e); // notwendig wegen Lambda
             }
         });
+
         System.out.println("Geändert: " + svc.getById(id));
     }
+
 
     private static void deleteAnimal(AnimalService svc) throws AnimalNotFoundException {
         System.out.print("ID zum Löschen: ");
@@ -128,14 +147,5 @@ public class Main {
         list(svc.search(AnimalService.bySpecies(IN.nextLine())));
     }
 
-    private static void seed(AnimalService svc) {
-        try {
-            svc.add(new Dog(1, "Bello", 3, "Labrador"));
-            svc.add(new Cat(2, "Minka", 2, true));
-            svc.add(new Parrot(3, "Koko", 5, "Grün"));
-        } catch (ValidationException e) {
-            System.out.println("Seed-Fehler: " + e.getMessage());
-        }
-    }
 }
 

@@ -2,11 +2,13 @@ package A20_Tierverwaltungssystem.model;
 
 import A20_Tierverwaltungssystem.exceptions.ValidationException;
 
+import java.time.LocalDate;
+
 public class Parrot extends Animal {
     private String color;
 
-    public Parrot(long id, String name, int age, String color) throws ValidationException {
-        super(id, name, age);
+    public Parrot(long id, String name, LocalDate birthDate, String color) throws ValidationException {
+        super(id, name, birthDate);
         setColor(color);
     }
 
@@ -18,5 +20,11 @@ public class Parrot extends Animal {
     }
 
     @Override public String getSpecies() { return "Parrot"; }
+    @Override
+    public String toString() {
+        return "Parrot{id=%d, name='%s', birthDate=%s, age=%d, color='%s'}"
+                .formatted(getId(), getName(), getBirthDate(), getAge(), color);
+    }
+
 }
 

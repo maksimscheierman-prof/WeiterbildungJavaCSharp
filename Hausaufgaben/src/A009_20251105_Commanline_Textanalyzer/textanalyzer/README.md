@@ -17,7 +17,7 @@ Der Text-Analyzer kann:
 
 ---
 
-## 🏗️ Aufbau (welche Datei löst welche Aufgabe)
+## 🏗️ Aufbau
 
 | Aufgabe | Thema | Umsetzung |
 |:--|:--|:--|
