@@ -2,43 +2,55 @@ package ArraysUndTertiary;
 
 import java.util.Random;
 
+class C2 {
+    void displayC2() { System.out.println("displayC2() from C2"); }
+}
+
+interface I {
+    void displayI();
+}
+
+class C1 extends C2 implements I {
+    public void displayI() { System.out.println("displayI() from C1"); }
+}
+
 public class Aufgabe3 {
     public static void main(String[] args) {
-        String[] raeume = {"Wohnzimmer", "Küche", "Schlafzimmer"};
-        double[][] temperaturen = new double[raeume.length][24];
-        Random rand = new Random();
 
-        // Zufallswerte
-        for (int r = 0; r < raeume.length; r++) {
-            for (int h = 0; h < 24; h++) {
-                temperaturen[r][h] = -10 + rand.nextDouble() * 40;
-            }
-        }
+        System.out.println("=== Erzeugung des Objekts ===");
+        C1 realObject = new C1();
+        System.out.println("Typ des Objekts: " + realObject.getClass().getName());
 
-        double gesamtSumme = 0;
-        int gesamtAnzahl = 0;
+        System.out.println("\n=== Zugriff über C1-Referenz ===");
+        realObject.displayI();
+        realObject.displayC2();
 
-        for (int r = 0; r < raeume.length; r++) {
-            double min = temperaturen[r][0];
-            double max = temperaturen[r][0];
-            double sum = 0;
+        System.out.println("\n=== Zugriff über I-Referenz (Interface) ===");
+        I iRef = realObject;   // Upcast (automatisch)
+        iRef.displayI();       // erlaubt
+        // iRef.displayC2();   // NICHT erlaubt - Interface kennt displayC2 nicht
 
-            for (int h = 0; h < 24; h++) {
-                double t = temperaturen[r][h];
-                if (t < min) min = t;
-                if (t > max) max = t;
-                sum += t;
-            }
+        System.out.println("iRef.getClass(): " + iRef.getClass().getName());
 
-            double avg = sum / 24;
-            gesamtSumme += sum;
-            gesamtAnzahl += 24;
+        System.out.println("\n=== Zugriff über C2-Referenz (Superclass) ===");
+        C2 cRef = realObject;   // Upcast
+        cRef.displayC2();       // erlaubt
+    // erlaubt (durch Polymorphie)
 
-            System.out.printf("%s → Min: %.2f°C | Max: %.2f°C | Durchschnitt: %.2f°C%n",
-                    raeume[r], min, max, avg);
-        }
+        System.out.println("cRef.getClass(): " + cRef.getClass().getName());
 
-        System.out.printf("%nGesamtdurchschnitt aller Räume: %.2f°C%n", gesamtSumme / gesamtAnzahl);
+        System.out.println("\n=== Downcast von I zu C2 ===");
+        C2 casted = (C2) iRef;  // Downcast funktioniert
+        casted.displayC2();
+
+
+        System.out.println("casted.getClass(): " + casted.getClass().getName());
+
+        System.out.println("\n=== Fazit ===");
+        System.out.println("realObject == iRef ? " + (realObject == iRef));
+        System.out.println("realObject == cRef ? " + (realObject == cRef));
+        System.out.println("realObject == casted ? " + (realObject == casted));
     }
 }
+
 

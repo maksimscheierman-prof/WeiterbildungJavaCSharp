@@ -1,5 +1,6 @@
 package A20_Tierverwaltungssystem.io;
 
+import A20_Tierverwaltungssystem.exceptions.ValidationException;
 import A20_Tierverwaltungssystem.model.Animal;
 import A20_Tierverwaltungssystem.model.Cat;
 import A20_Tierverwaltungssystem.model.Dog;
@@ -30,22 +31,29 @@ public class FileHandler {
             while ((row = br.readLine()) != null) {
                 String[] splitRow = row.split(";");
                 String species = splitRow[0];
+                long id = Long.parseLong(splitRow[0]);
                 String name = splitRow[1];
-                int age = Integer.parseInt(splitRow[2]);
-                LocalDate registrationDate = LocalDate.parse(splitRow[3]);
-                LocalTime registrationTime = LocalTime.parse(splitRow[4]);
-                LocalDateTime lastCheckup = LocalDateTime.parse(splitRow[5]);
+                LocalDate birthDate = LocalDate.parse(splitRow[2]);
+                String breed = splitRow[7]; // oder wo immer dein Extra steht
+                boolean indoor = Boolean.parseBoolean(splitRow[7]);
+                String color = splitRow[7];
                 Animal animal = switch (species) {
-                    case "hund" -> new Dog(name, species, age, registrationDate, registrationTime, lastCheckup);
-                    case "katze" -> new Cat(name, species, age, registrationDate, registrationTime, lastCheckup);
-                    case "papagei" -> new Parrot(name, species, age, registrationDate, registrationTime, lastCheckup);
-                    default -> new Animal(name, species, age, registrationDate, registrationTime, lastCheckup) {
+                    case "hund" -> new Dog(id, name, birthDate, breed);
+                    case "katze" -> new Cat(id, name, birthDate, indoor);
+                    case "papagei" -> new Parrot(id, name, birthDate, color);
+                    default -> new Animal(id, name, birthDate) {
+                        @Override
+                        public String getSpecies() {
+                            return "";
+                        }
                     };
                 };
                 animals.add(animal);
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
+        } catch (ValidationException e) {
+            throw new RuntimeException(e);
         }
         return animals;
     }
