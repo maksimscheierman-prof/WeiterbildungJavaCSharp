@@ -1,0 +1,157 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+abstract class Archetype {
+  - lifepoints : int
+  - strength : int
+  - intelligence : int
+  + dealDmg : int
+}
+
+class Mage extends Archetype {
+  + dealDmg : int
+}
+
+class Warrior extends Archetype {
+  + dealDmg : int
+}
+
+class Hunter extends Archetype {
+  + dealDmg : int
+}
+
+interface Race {
+  + effects : List<Effect>
+}
+
+class Orc implements Race {
+  + effects : List<Effect>
+}
+
+class Human implements Race {
+  + effects : List<Effect>
+}
+
+class Elf implements Race{
+  + effects : List<Effect>
+}
+
+interface Effect{
+ + apply(Unit unit)
+ + remove(Unit unit)
+}
+
+class PassiveEffect implements Effect{
+  - attributeBonus : Map<String, Double>
+}
+
+class ActiveEffect implements Effect{
+  - duration : int
+  - triggerCondition : String
+}
+
+class Item{
+  - name : String
+  - effects : List<Effect>
+  + equip(Unit)
+  + activate(Unit)
+}
+class ItemFactory{
+  + createItems(int) : List<Item>
+}
+
+abstract class Unit {
+  - archetype : Archetype
+  - race : Race
+  - weapon : Weapon
+  - dmgBonus : int
+  - items : List<Item>
+  + addItem()
+  + fight(Unit defender)
+  + calcDmg() : double
+  + updateLifepoints(Unit target)
+}
+
+class Hero extends Unit{
+
+  + calcDmg() : double
+}
+
+class Monster extends Unit{
+  + calcDmg() : double
+  + dropItem() : Item
+}
+
+class MonsterFactory {
+  + createMonsters(int) : List<Monster>
+}
+
+class Weapon {
+ - type : string
+ - range : int
+ - dmg : double
+
+}
+
+class Dungeon{
+   - <List> chapters : Chapter
+}
+
+class Chapter{
+ - narrative : String
+ - number : int
+- <List> rooms : Room
+}
+
+class Room{
+  - door : String
+  - <List> monsters : Monster
+  - <List> items : Item
+  - quest : Quest
+  + enter()
+  + leave()
+  + getDoor()
+}
+
+class Quest{
+  - requirement : String
+  - questCleared: Boolean
+  + getRequirement() : String
+  + clearQuest() : Boolean
+}
+
+class Game {
+  - hero : Hero
+  - dungeon : Dungeon
+  + simulate()
+}
+
+class Main {
+  + main(String[])
+}
+
+' =============== Beziehungen ===============
+Unit *-- Archetype : "1"
+Unit *-- Race : "1"
+Unit *-- Weapon : "1"
+Unit *-- Item : "0..*"
+
+Dungeon *-- Chapter : "4..*"
+Chapter *-- Room : "1..3"
+Room *-- Monster : "0..*"
+Room *-- Item : "0..*"
+Room *-- Quest : "1"
+Item *-- Effect : "1..*"
+Race *-- Effect : "2"
+
+
+
+MonsterFactory ..> Monster : creates
+ItemFactory ..> Item : creates
+
+Main --> Game
+
+Game --> Hero
+Game --> Dungeon
+@enduml

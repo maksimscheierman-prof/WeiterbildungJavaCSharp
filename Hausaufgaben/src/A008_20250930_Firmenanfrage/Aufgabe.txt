@@ -1,5 +1,6 @@
 Auftraggeber:
-Die Firma MessageTech GmbH möchte ein Programm entwickeln, das verschiedene Arten von Nachrichten darstellen und verschicken kann.
+Die Firma MessageTech GmbH möchte ein Programm entwickeln,
+das verschiedene Arten von Nachrichten darstellen und verschicken kann.
 
 1. Nachrichtenarten:
 

@@ -40,7 +40,7 @@ public class a_OverView {
          * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
         int[] meinIntArray ={1,2,3};
-        System.out.println(meinIntArray[10]);
+        //System.out.println(meinIntArray[10]);
 
         /*** * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
          *     Wenn du den Code ausführst wird das Programm abbrechen

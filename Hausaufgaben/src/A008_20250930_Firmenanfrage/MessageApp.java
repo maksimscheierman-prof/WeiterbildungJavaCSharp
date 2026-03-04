@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class MessageApp {
 
-    private ArrayList<Message> messages = new ArrayList<>();
+    private ArrayList<Nachricht> nachrichten = new ArrayList<>();
     private Scanner scanner = new Scanner(System.in);
 
     public void start() {
@@ -49,8 +49,8 @@ public class MessageApp {
         System.out.print("Text: ");
         String text = scanner.nextLine();
 
-        Message email = new Email(sender, empfänger, betreff, text);
-        messages.add(email);
+        Nachricht email = new Email(sender, empfänger, betreff, text);
+        nachrichten.add(email);
         System.out.println(email.send());
     }
 
@@ -62,8 +62,8 @@ public class MessageApp {
         System.out.print("Text: ");
         String text = scanner.nextLine();
 
-        Message sms = new SMS(sender, empfänger, text);
-        messages.add(sms);
+        Nachricht sms = new SMS(sender, empfänger, text);
+        nachrichten.add(sms);
         System.out.println(sms.send());
     }
 
@@ -77,28 +77,28 @@ public class MessageApp {
         System.out.print("Text: ");
         String text = scanner.nextLine();
 
-        Message brief = new Brief(sender, empfänger, postage, text);
-        messages.add(brief);
+        Nachricht brief = new Brief(sender, empfänger, text);
+        nachrichten.add(brief);
         System.out.println(brief.send());
     }
 
     private void messageOverview() {
-        if (messages.isEmpty()) {
+        if (nachrichten.isEmpty()) {
             System.out.println("Keine Nachrichten vorhanden");
             return;
         }
 
         System.out.println("\n Nachrichten Vorschau ");
-        for (int i = 0; i < messages.size(); i++) {
+        for (int i = 0; i < nachrichten.size(); i++) {
             System.out.print((i + 1) + ". ");
-            messages.get(i).preview(20);
+            nachrichten.get(i).vorschau(20);
         }
 
         System.out.println("\nNummer der Nachricht eingeben für die Details (0 für Hauptmenü): ");
         int auswahl = Integer.parseInt(scanner.nextLine());
 
-        if (auswahl > 0 && auswahl <= messages.size()) {
-            messages.get(auswahl - 1).display();
+        if (auswahl > 0 && auswahl <= nachrichten.size()) {
+            nachrichten.get(auswahl - 1).anzeigen();
         } else {
             System.out.println("Zurück zum Hauptmenü...");
         }

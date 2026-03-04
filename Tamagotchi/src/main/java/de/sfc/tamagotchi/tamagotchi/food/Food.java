@@ -1,6 +1,7 @@
 package de.sfc.tamagotchi.tamagotchi.food;
 
 
+
 /**
  * Abstract class food. Should be a basis for every subtype of food.
  */
@@ -13,11 +14,17 @@ public abstract class Food {
         this.calories = calories;
     }
 
+
     public String getName() {
         return name;
     }
 
     public int getCalories() {
         return calories;
+    }
+
+    @Override
+    public String toString() {
+        return name; //
     }
 }

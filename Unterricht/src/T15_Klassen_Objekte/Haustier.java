@@ -19,6 +19,8 @@ public class Haustier {
     private String name;
     private String Art;
     private int size;
+    private int index;
+    private static int counter = 0; //zählt alle haustiere
 
 
     /** KONSTRUKTOR **/
@@ -31,6 +33,7 @@ public class Haustier {
         this.name = name;   // this. bezieht sich auf die Attribute der Klasse, ohne this beziehen wir uns auf die Parameter der Methode.
         this.Art = Art;
         this.size = size;
+        this.index = ++counter; //automatisch hochzählen
     }
 
     /** Getter & Setter **/
@@ -40,7 +43,8 @@ public class Haustier {
     // oder zu verändern.
     public String getName() { return this.name; }   // Methode gibt nur den Namen zurück
     public String getArt() { return this.Art; }     // Methode gibt nur die Art zurück
-    public int getSize() { return this.size; }      // Methode gibt nur die größe zurück.
+    public int getSize() { return this.size; }
+    public int getIndex() { return this.index; }  // Methode gibt nur den Index zurück.
 
     public void setName(String name) { this.name = name; }
     public void setArt(String art) { Art = art; }
@@ -49,9 +53,12 @@ public class Haustier {
             this.size = size;           // Wir behalten also die Kontrolle über die Variable.
         }
     }
+    public void setIndex(int index) {
+        this.index = index;
+    }
 
 
-    public void gibLaut(){
+    public static void gibLaut(String Art){
         if(Art.equals("Dog")){
             System.out.println("BELL");
         }
@@ -62,6 +69,7 @@ public class Haustier {
             System.out.println("Tiergeräusch");
         }
     }
+
 
 
 }

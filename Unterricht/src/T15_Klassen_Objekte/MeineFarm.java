@@ -5,14 +5,6 @@ import java.util.Scanner;
 
 public class MeineFarm {
 
-            /*
-        Du bist hier:
-        [ ] a_Info
-        [ ] Haustier
-        [x] MeineFarm
-        [ ] Main
-     */
-
     // Wir legen eine Liste an in die unsere Haustiere kommen.
     ArrayList<Haustier> alleHaustiere = new ArrayList<>();
     Scanner scan = new Scanner(System.in);
@@ -20,15 +12,20 @@ public class MeineFarm {
     public void runFarm(){
         createAnimals();    // Beim Start wollen wir unsere Tiere anlegen.
         while(true){        // Programm Loop
-            for(Haustier haustier : alleHaustiere){                 // Gib alle Tiere einmal aus
+            for(Haustier haustier : alleHaustiere){
+                System.out.print("Index: " + haustier.getIndex() + " ");// Gib alle Tiere einmal aus
                 System.out.print("Art: " + haustier.getArt() + " ");
                 System.out.print("Name: " + haustier.getName() + " ");
                 System.out.println("Size: " + haustier.getSize());
             }
-            System.out.println("Haustier hinzufügen? (ja eintippen)");  // Wir fragen ob ein neues Hinzukommen soll
+            System.out.println("Haustier hinzufügen oder Tiergeräusch abspielen? (ja eintippen, nein für weitere Optionen)");  // Wir fragen ob ein neues Hinzukommen soll
             userinput = scan.nextLine();
             if(userinput.equals("ja")){         // Wenn ja
                 addNewAnimal();                 // Starte die Subroutine
+            }
+            else if(userinput.equals("nein")){
+                System.out.println("Index des Tieres eingeben um das jeweilige Geräusch abzuspielen!");
+                playAnimalSound();
             }
         }
     }
@@ -62,4 +59,20 @@ public class MeineFarm {
         scan.nextLine(); // Buffer clearen
         alleHaustiere.add(new Haustier(name,art,size));
     }
+    private void playAnimalSound(){
+        int searchIndex = scan.nextInt();
+        scan.nextLine(); // Buffer clearen
+        Haustier h = getHaustierByIndex(searchIndex);
+        System.out.println("Haustier: " + h.getName() + " " + h.getArt() + " " + h.getSize());
+        Haustier.gibLaut(h.getArt());
+    }
+    private Haustier getHaustierByIndex(int index) {
+        for (Haustier h : alleHaustiere) {
+            if (h.getIndex() == index) {
+                return h; // gefunden!
+            }
+        }
+        return null; // nichts gefunden
+    }
+
 }

@@ -17,6 +17,10 @@
         - Kosten richten sich nach Stückpreis (Optional Mengenrabatt)
         -> Standartwerte: Material Wolle, Preis 0.05E,
 
+        ab 50 t-shirts ist der price bei 0,04
+        ab 100 bei 0,03
+        ab 20 pullovern 0,04
+        ab 100 bei 0,03
      ******************************************************************************************* </p>
 
 

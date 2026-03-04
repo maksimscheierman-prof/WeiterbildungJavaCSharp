@@ -22,6 +22,6 @@ public class a_Info {
      *
      *      Ein Objekt ist eine konkrete *INSTANZ* einer Klasse.
      *      Es ist ein echtes Ding im Speicher, das aus dem Bauplan der Klasse erstellt wurde.
-     *
+     * TEST123
      */
 }

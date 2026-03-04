@@ -1,7 +1,7 @@
 package A20_Tierverwaltungssystem.exceptions;
 
-public class InvalidAgeException extends Exception {
-    public InvalidAgeException() {
-        super("Das Alter darf nicht unter 0 sein.");
+public class InvalidAgeException extends ValidationException {
+    public InvalidAgeException(int age) {
+        super("Ungültiges Alter: " + age + " (muss >= 0 sein)");
     }
 }

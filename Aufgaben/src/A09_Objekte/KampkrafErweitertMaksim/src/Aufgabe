@@ -1,0 +1,43 @@
+//Original
+Kampfkraft Rechner.
+       Es soll für ein Aufbauspiel eine Kampfkraftlogik gebaut werden.
+       - Erstelle eine Klasse "Einheit"
+       -> Diese soll einen Namen und eine Kampfkraft haben.
+       -> Erstelle 2 Klassen: TeamA und TeamB
+       - TeamA und TeamB können nun jeweils Einheiten hinzufügen.
+       - Die Gesamte Kampfkraft soll daraufhin zusammenaddiert und angezeigt werden.
+
+//modified extended vererbung
+Schlacht Simulation
+        Einheit
+            Attribute
+                Es gibt verschiedene Einheiten mit unterschiedlichen
+                Namen, Kampfstärke(Dnd), Kosten, Leben und Zustand(lebending)
+            Konstruktor erstellen
+            Methoden
+                Kampf
+                    in welcher 2 Units gegeneinander kämpfen.
+                anpassenLebenspunkte
+                    hier werden lebenspunkte hinzugefügt oder abgezogen
+                anpassenZustand
+                    hier wird der Zustand verändert, falls die Einheit stirbt
+                    stirbt eine einheit kann sie weder angegriffen werden, noch selbst angreifen
+                erstelleInitialEinheiten
+                    es werden 10 verschiedene Einheiten am Anfang generiert
+        Team
+            Attribute
+                Eine Klasse Team mit den Eigenschaften
+                Name, Gewonnen, Verloren, Array der Units
+            Konstruktor erstellen
+            Methoden
+                teamKampf
+                    paramater 2 zu kämpfende teams
+                    rückgabewert gewonnenes team
+                    alle einheiten jedes teams kämpfen gleichzeitig gegen alle einheiten des
+                    gegnerischenteams
+                    das team gewinnt, welches noch lebende einheiten hat
+
+        Es gibt verschiedene Einheitstypen (Artillerie, Infanterie, Kavellarie)
+        Infanterie hat BonusAngriff gegen Artillerie
+        Artillerie hat BonusAngriff gegen Kavellarie
+        Kavellarie hat BonusAngriff gegen Infanterie

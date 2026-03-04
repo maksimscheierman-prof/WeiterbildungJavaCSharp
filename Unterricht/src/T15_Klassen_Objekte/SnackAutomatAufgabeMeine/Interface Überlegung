@@ -1,0 +1,35 @@
+Übersicht der Snacks wird aufgelistet:
+    Snack 1 + Menge
+    Snack 2 + Menge
+    Snack 3 + Menge
+Systemouts
+    Snacks kaufen(kaufen eintippen)
+    Snacks auffuellen(auffuellen eintippen)
+    Snack Naehrwaerte ausgeben(Snacknamen eintippen)
+Userinput
+    Option(switch case)
+Option kaufen:
+Systemouts
+    Kaufpreis
+Userinput
+    Geldmenge
+Systemout (switch case Geld nicht aussreichend bzw. passend )
+    Snack + Restgeld
+Option auffuellen:
+Systemout
+    Passwort eingeben
+Userinput Passwort
+if bei korrektem passwort
+    Systemout
+        Welchen Snack auffuellen(Snacknamen eingeben)
+else
+    Systemout
+        Falsches passwort! Bitte erneut abgeben oder abbrechen
+Userinput eingabe
+if eingabe passwort
+    passwortcheck
+else
+    hauptmenue
+Option Naehrwerte:
+Systemouts (if/else korrektername eingegeben)
+Naehrwerte

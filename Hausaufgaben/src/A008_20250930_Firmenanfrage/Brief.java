@@ -1,33 +1,47 @@
 package A008_20250930_Firmenanfrage;
 
+import java.time.LocalDate;
 import java.util.Random;
 
-public class Brief extends Message {
-    private String senderAddress;
-    private String empfängerAddress;
-    private double portokosten;
+// Brief
+class Brief extends Nachricht {
+    private String absenderAdresse;
+    private String empfaengerAdresse;
+    private double porto;
 
-    public Brief(String senderAddress, String empfängerAddress, double portokosten, String text) {
+    public Brief(String absenderAdresse, String empfaengerAdresse, String text) {
         super(text);
-        this.senderAddress = senderAddress;
-        this.empfängerAddress = empfängerAddress;
-        this.portokosten = portokosten;
+        this.absenderAdresse = absenderAdresse;
+        this.empfaengerAdresse = empfaengerAdresse;
+        this.porto = berechnePorto();
+    }
+
+    // Bonus: Porto anhand Textlänge
+    private double berechnePorto() {
+        int laenge = text.length();
+        if (laenge <= 100) return 0.85;
+        if (laenge <= 500) return 1.55;
+        return 2.70;
     }
 
     @Override
-    public String send() {
+    public long send() {
         Random rand = new Random();
-        int durationDays = rand.nextInt(3) + 1;
-        return "Brief Versanddauer: " + durationDays + " Tage";
+        long dauer = (1 + rand.nextInt(3)) * 24 * 60 * 60; // 1–3 Tage in Sekunden
+        System.out.println("Der Brief an \"" + empfaengerAdresse +
+                "\" mit der Nachricht \"" + text +
+                "\" wurde am " + LocalDate.now() +
+                " versendet. (Porto: " + porto + " EUR)");
+        return dauer;
     }
 
     @Override
-    public void display() {
-        System.out.println("=== Brief ===");
-        System.out.println("Absender: " + senderAddress);
-        System.out.println("Empfänger: " + empfängerAddress);
-        System.out.println("Portokosten: " + portokosten + " EUR");
+    public void anzeigen() {
+        System.out.println("----- Brief -----");
+        System.out.println("Von: " + absenderAdresse);
+        System.out.println("An: " + empfaengerAdresse);
+        System.out.println("Porto: " + porto + " EUR");
         System.out.println("Nachricht: " + text);
-        System.out.println();
+        System.out.println("Datum: " + LocalDate.now());
     }
 }

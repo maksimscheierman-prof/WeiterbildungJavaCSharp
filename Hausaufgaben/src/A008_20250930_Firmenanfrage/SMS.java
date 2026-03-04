@@ -1,30 +1,35 @@
 package A008_20250930_Firmenanfrage;
 
+import java.time.LocalDate;
 import java.util.Random;
 
-public class SMS extends Message {
-    private String senderNummer;
-    private String empfängerNummer;
+// SMS
+class SMS extends Nachricht {
+    private String absenderNr;
+    private String empfaengerNr;
 
-    public SMS(String senderNummer, String empfängerNummer, String text) {
+    public SMS(String absenderNr, String empfaengerNr, String text) {
         super(text);
-        this.senderNummer = senderNummer;
-        this.empfängerNummer = empfängerNummer;
+        this.absenderNr = absenderNr;
+        this.empfaengerNr = empfaengerNr;
     }
 
     @Override
-    public String send() {
+    public long send() {
         Random rand = new Random();
-        int duration = rand.nextInt(2) + 1;
-        return "SMS Versanddauer: " + duration + " Sekunden";
+        long dauer = 1 + rand.nextInt(2); // 1–2 Sekunden
+        System.out.println("Die SMS an " + empfaengerNr +
+                " mit der Nachricht \"" + text +
+                "\" wurde am " + LocalDate.now() + " versendet.");
+        return dauer;
     }
 
     @Override
-    public void display() {
-        System.out.println("=== SMS ===");
-        System.out.println("Von: " + senderNummer);
-        System.out.println("An: " + empfängerNummer);
+    public void anzeigen() {
+        System.out.println("----- SMS -----");
+        System.out.println("Von: " + absenderNr);
+        System.out.println("An: " + empfaengerNr);
         System.out.println("Nachricht: " + text);
-        System.out.println();
+        System.out.println("Datum: " + LocalDate.now());
     }
 }
